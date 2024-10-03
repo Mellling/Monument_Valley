@@ -10,14 +10,15 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] LayerMask roadMask;
     [SerializeField] PlayerPathSeeker pathSeeker;
-    
+
     private const float rayDistance = 1000f; // Raycast 최대 거리
 
+    #region Move
     /// <summary>
-    /// 플레이어가 마우스 클릭 시 호출되는 메소드
+    /// 플레이어가 마우스 클릭 시 호출되는 캐릭터 이동 메소드
     /// </summary>
     /// <param name="Value"></param>
-    private void OnClick(InputValue Value)
+    private void OnMove(InputValue Value)
     {
         CameraRay();    // 마우스 클릭 시 CameraRay 호출
     }
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
             // Road가 null이 아닐 경우 true 반환
             return hitRoad != null;
         }
-
         return false; // 길에 충돌하지 않음
     }
+    #endregion
 }
