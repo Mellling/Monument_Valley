@@ -8,9 +8,14 @@ using UnityEngine;
 public class Road : MonoBehaviour
 {
     // 맵에서 연결된 길을 저장하는 List
-    [SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
+    [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
     // Ray의 레이어 마스크
     [SerializeField] LayerMask roadMask;
+
+    public bool isUncertain;
+    [SerializeField] Road uncertainRoad;
+
+    public Road UncertainRoad => uncertainRoad;
 
     #region Unity Event
     private void Awake()
@@ -28,7 +33,10 @@ public class Road : MonoBehaviour
 
         foreach (var dir in rayDirections) 
         {
-            if (Physics.Raycast(transform.position, dir, out var info, 1.3f, roadMask))
+            // dir을 로컬 좌표계에서 월드 좌표계로 변환
+            Vector3 worldDir = transform.TransformDirection(dir);
+
+            if (Physics.Raycast(transform.position, worldDir, out var info, 1.3f, roadMask))
             {
                 // // GetComponent 호출 전에 Road 컴포넌트 캐싱
                 Road road = info.transform.GetComponent<Road>();
