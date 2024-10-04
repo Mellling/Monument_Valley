@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Header("Find Player Shortest Distance")]
     [SerializeField] LayerMask roadMask;
     [SerializeField] PlayerPathSeeker pathSeeker;
 

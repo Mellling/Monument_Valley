@@ -7,11 +7,13 @@ using UnityEngine;
 /// </summary>
 public class Road : MonoBehaviour
 {
-    // 맵에서 연결된 길을 저장하는 List
-    [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
+    [Header("Linked Roads")]
     // Ray의 레이어 마스크
     [SerializeField] LayerMask roadMask;
+    // 맵에서 연결된 길을 저장하는 List
+    [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
 
+    [Header("Uncertainty Of Connection")]
     public bool isUncertain;
     [SerializeField] Road uncertainRoad;
 
