@@ -31,8 +31,10 @@ public class PlayerPathSeeker : MonoBehaviour
         // DOTween을 이용해 이동
         foreach (var road in path)
         {
+            // 현재 y값을 유지
+            Vector3 targetPosition = new Vector3(road.x, transform.position.y, road.z);
             // 각 위치로 이동 애니메이션을 추가
-            seq.Append(transform.DOMove(road + Vector3.up, 0.3f).SetEase(Ease.Linear));
+            seq.Append(transform.DOMove(targetPosition, 0.3f).SetEase(Ease.Linear));
         }
     }
     #endregion
