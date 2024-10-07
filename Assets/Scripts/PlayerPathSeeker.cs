@@ -36,7 +36,7 @@ public class PlayerPathSeeker : MonoBehaviour
 
             // 각 위치로 이동 애니메이션을 추가
             if (road.isStair)
-                seq.Append(MoveToRoad(road, targetPosition, 0.6f, 0));
+                seq.Append(MoveToRoad(road, targetPosition, 0.6f, 0f));
             else if (road.isEndRoad)
                 seq.Append(MoveToRoad(road, targetPosition, yOffset : 0f));
             else
