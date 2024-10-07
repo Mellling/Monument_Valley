@@ -17,6 +17,12 @@ public class Road : MonoBehaviour
     public bool isUncertain;
     [SerializeField] Road uncertainRoad;
 
+    [Header("Uncertainty Of Connection")]
+    public bool isStair;
+
+    [Header("Uncertainty Of Connection")]
+    public bool isEndRoad;
+
     public Road UncertainRoad => uncertainRoad;
 
     #region Unity Event
