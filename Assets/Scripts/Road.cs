@@ -17,10 +17,10 @@ public class Road : MonoBehaviour
     public bool isUncertain;
     [SerializeField] Road uncertainRoad;
 
-    [Header("Uncertainty Of Connection")]
+    [Header("Staircase or not")]
     public bool isStair;
 
-    [Header("Uncertainty Of Connection")]
+    [Header("Last load or not")]
     public bool isEndRoad;
 
     public Road UncertainRoad => uncertainRoad;
