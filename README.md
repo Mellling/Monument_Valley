@@ -1,4 +1,4 @@
-![KakaoTalk_20240919_202441173](https://github.com/user-attachments/assets/f1a64d75-a556-45d7-8744-2c9e4caf9694)
+![Monument_Valley_game_video_games-1358895](https://github.com/user-attachments/assets/55abd2ca-c1a3-4a4e-af73-df81b9cfa75e)
 
 ## 📝 한 줄 소개
 
