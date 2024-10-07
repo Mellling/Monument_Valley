@@ -49,7 +49,10 @@ public class PlayerPathSeeker : MonoBehaviour
     /// </summary>
     /// <param name="road">이동하고자 하는 길</param>
     /// <param name="targetPosition">플레이어가 이동할 타켓 position</param>
-    /// <returns></returns>
+    /// <param name="moveSpeed">플레이어의 이동 속도 (기본값: 0.3f)</param>
+    /// <param name="yOffset">Y축으로 이동할 거리. 
+    /// 이 값은 플레이어가 길 위에서 어느 정도 떠 있는지(높이)를 조절합니다 (기본값: 0.5f)</param>
+    /// <returns>플레이어의 이동을 처리하는 DOTween Tween 객체</returns>
     private Tween MoveToRoad(Road road, Vector3 targetPosition, float moveSpeed = 0.3f, float yOffset = 0.5f)
     {
         // DOTween을 이용해 주어진 길로 이동하는 Tween을 생성
@@ -79,6 +82,7 @@ public class PlayerPathSeeker : MonoBehaviour
         // 방향 벡터가 0이 아닌 경우에만 회전 로직 실행
         if (directionOnXZ != Vector3.zero)
         {
+
             // 현재 방향과 목표 방향 간의 각도 계산
             float angle = Vector3.Angle(transform.forward, directionOnXZ);
 
