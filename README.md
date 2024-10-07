@@ -1,4 +1,4 @@
-![Monument_Valley_game_video_games-1358895](https://github.com/user-attachments/assets/55abd2ca-c1a3-4a4e-af73-df81b9cfa75e)
+![Monument_Valley_game_video_games-1358895](https://github.com/user-attachments/assets/eda0ab2a-6fc2-44c9-a397-80c721ef57d4)
 
 ## 📝 한 줄 소개
 
