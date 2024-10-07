@@ -469,9 +469,12 @@ MonoBehaviour:
   roadMask:
     serializedVersion: 2
     m_Bits: 256
-  <roadLinks>k__BackingField: []
+  <roadLinks>k__BackingField:
+  - {fileID: 830689196}
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &89343207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -879,7 +882,8 @@ Transform:
   m_LocalPosition: {x: 0.17628932, y: 0, z: -0.24804163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 830689195}
   m_Father: {fileID: 2095845204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &392663961
@@ -954,6 +958,134 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 245115552933403794, guid: a89d676aa37f5b0429d0c8251687739f, type: 3}
+--- !u!1 &394911889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394911890}
+  - component: {fileID: 394911894}
+  - component: {fileID: 394911893}
+  - component: {fileID: 394911892}
+  - component: {fileID: 394911891}
+  m_Layer: 8
+  m_Name: Road 20
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394911890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1841639856}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394911891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  <roadLinks>k__BackingField:
+  - {fileID: 488819718}
+  - {fileID: 1656301831}
+  isUncertain: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 1
+  isEndRoad: 0
+--- !u!65 &394911892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911889}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &394911893
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911889}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &394911894
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394911889}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &433740088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1139,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &433740091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1270,6 +1404,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487096753}
   m_Mesh: {fileID: 4529320595357891389, guid: 662cb756f3f16524c86c166b7dedec86, type: 3}
+--- !u!1 &488819716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488819717}
+  - component: {fileID: 488819721}
+  - component: {fileID: 488819720}
+  - component: {fileID: 488819719}
+  - component: {fileID: 488819718}
+  m_Layer: 8
+  m_Name: Road 19
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488819717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488819716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1986798328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488819718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488819716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  <roadLinks>k__BackingField:
+  - {fileID: 830689196}
+  - {fileID: 394911891}
+  isUncertain: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 1
+  isEndRoad: 0
+--- !u!65 &488819719
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488819716}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &488819720
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488819716}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &488819721
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488819716}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &630838319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +2107,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786009815}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &830689194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830689195}
+  - component: {fileID: 830689199}
+  - component: {fileID: 830689198}
+  - component: {fileID: 830689197}
+  - component: {fileID: 830689196}
+  m_Layer: 8
+  m_Name: Road 18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &830689195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830689194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 392663960}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &830689196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830689194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  <roadLinks>k__BackingField:
+  - {fileID: 89343206}
+  - {fileID: 488819718}
+  isUncertain: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 1
+  isEndRoad: 0
+--- !u!65 &830689197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830689194}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &830689198
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830689194}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &830689199
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830689194}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &832430493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +2321,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &910358932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2055,6 +2447,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &952261417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2164,6 +2558,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1044985067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2548,6 +2944,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1238047598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2672,6 +3070,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1317531629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2796,6 +3196,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1317789426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2920,6 +3322,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1339805771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3044,6 +3448,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1378799640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3510,6 +3916,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1582476710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3610,7 +4018,7 @@ Transform:
   m_GameObject: {fileID: 1656301826}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3904739, z: -0, w: 0.920614}
-  m_LocalPosition: {x: 2.3374295, y: 4.3009996, z: 4.176092}
+  m_LocalPosition: {x: 2.3974295, y: 5.001, z: 3.876092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3702,9 +4110,12 @@ MonoBehaviour:
   roadMask:
     serializedVersion: 2
     m_Bits: 256
-  <roadLinks>k__BackingField: []
+  <roadLinks>k__BackingField:
+  - {fileID: 394911891}
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 1
 --- !u!1 &1658480614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +4169,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1658480617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3882,6 +4295,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1677359332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4114,6 +4529,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 1
   uncertainRoad: {fileID: 2082684415}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1751449013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4238,6 +4655,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &1786839382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4529,7 +4948,8 @@ Transform:
   m_LocalPosition: {x: 1.6037272, y: 1.9879999, z: 1.1280437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 394911890}
   m_Father: {fileID: 2095845204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1841639857
@@ -5007,7 +5427,8 @@ Transform:
   m_LocalPosition: {x: 0.89, y: 0.99399996, z: 0.44000006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 488819717}
   m_Father: {fileID: 2095845204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1986798329
@@ -5135,6 +5556,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &2032937321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5237,8 +5660,8 @@ Transform:
   m_Children:
   - {fileID: 630838320}
   - {fileID: 196189985}
-  - {fileID: 832430494}
   - {fileID: 2095845204}
+  - {fileID: 832430494}
   - {fileID: 1444266237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5280,6 +5703,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 1
   uncertainRoad: {fileID: 1751449012}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &2082684416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5391,7 +5816,7 @@ Transform:
   m_GameObject: {fileID: 2095845203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: -3.0300002, z: -1.56}
+  m_LocalPosition: {x: -2.24, y: -2.33, z: -1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5453,6 +5878,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertain: 0
   uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
 --- !u!65 &2096318360
 BoxCollider:
   m_ObjectHideFlags: 0

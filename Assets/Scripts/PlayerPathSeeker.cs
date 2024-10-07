@@ -35,7 +35,12 @@ public class PlayerPathSeeker : MonoBehaviour
             Vector3 targetPosition = new Vector3(road.transform.position.x, transform.position.y, road.transform.position.z);
 
             // 각 위치로 이동 애니메이션을 추가
-            seq.Append(MoveToRoad(road, targetPosition));
+            if (road.isStair)
+                seq.Append(MoveToRoad(road, targetPosition, 0.6f, 0));
+            else if (road.isEndRoad)
+                seq.Append(MoveToRoad(road, targetPosition, yOffset : 0f));
+            else
+                seq.Append(MoveToRoad(road, targetPosition));
         }
     }
 
@@ -45,10 +50,10 @@ public class PlayerPathSeeker : MonoBehaviour
     /// <param name="road">이동하고자 하는 길</param>
     /// <param name="targetPosition">플레이어가 이동할 타켓 position</param>
     /// <returns></returns>
-    private Tween MoveToRoad(Road road, Vector3 targetPosition)
+    private Tween MoveToRoad(Road road, Vector3 targetPosition, float moveSpeed = 0.3f, float yOffset = 0.5f)
     {
         // DOTween을 이용해 주어진 길로 이동하는 Tween을 생성
-        return transform.DOMove(road.transform.position + Vector3.up * 0.5f, 0.3f).SetEase(Ease.Linear)
+        return transform.DOMove(road.transform.position + Vector3.up * yOffset, moveSpeed).SetEase(Ease.Linear)
             .OnUpdate(() => // 이동하는 동안 매 프레임 호출되는 업데이트 메서드
             {
                 // 플레이어의 조작이 길 연결에 영향을 주지 않을 때에만
