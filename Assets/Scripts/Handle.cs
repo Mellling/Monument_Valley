@@ -18,8 +18,8 @@ public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     [SerializeField] RotationAxis handleRotationAxis;
     Sequence rotateSeq;
 
-    #region Interaction
-    
+    #region Rotate
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         handleLight.enabled = true;
