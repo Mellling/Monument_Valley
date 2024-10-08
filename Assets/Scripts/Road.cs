@@ -10,11 +10,14 @@ public class Road : MonoBehaviour
     [Header("Linked Roads")]
     // Ray의 레이어 마스크
     [SerializeField] LayerMask roadMask;
+    [Tooltip("Only on the Road at the end of an object that changes its location through player manipulation")]
+    [SerializeField] LayerMask checkLinkedMask;
     // 맵에서 연결된 길을 저장하는 List
     [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
 
     [Header("Uncertainty Of Connection")]
-    public bool isUncertain;
+    public bool isUncertainXZ;
+    public bool isUncertainY;
     [SerializeField] Road uncertainRoad;
 
     [Header("Staircase or not")]
@@ -55,6 +58,48 @@ public class Road : MonoBehaviour
                 }
             }
         }
+    }
+    #endregion
+
+    #region
+    private void OnTriggerEnter(Collider other)
+    {
+        if (checkLinkedMask.Contain(other.gameObject.layer))
+        {
+            if (isUncertainXZ)
+                AddRoad();
+            else if (isUncertainY)
+                RemoveRoad();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (checkLinkedMask.Contain(other.gameObject.layer))
+        {
+            if (isUncertainXZ)
+                RemoveRoad();
+            else if (isUncertainY)
+                AddRoad();
+        }
+    }
+
+    private void AddRoad()
+    {
+        if (roadLinks.Contains(uncertainRoad))
+            return;
+
+        roadLinks.Add(uncertainRoad);
+        uncertainRoad.roadLinks.Add(this);
+    }
+
+    private void RemoveRoad()
+    {
+        if (!roadLinks.Contains(uncertainRoad))
+            return;
+
+        roadLinks.Remove(uncertainRoad);
+        uncertainRoad.roadLinks.Remove(this);
     }
     #endregion
 }
