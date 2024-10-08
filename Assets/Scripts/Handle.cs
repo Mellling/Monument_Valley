@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,8 +7,6 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public List<Road> roads;
-
     [Header("Rotate bridge")]
     [SerializeField] Transform bridge;
     [SerializeField] Light handleLight;
