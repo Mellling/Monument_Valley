@@ -16,7 +16,8 @@ public class Road : MonoBehaviour
     [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
 
     [Header("Uncertainty Of Connection")]
-    public bool isUncertain;
+    public bool isUncertainXZ;
+    public bool isUncertainY;
     [SerializeField] Road uncertainRoad;
 
     [Header("Staircase or not")]
@@ -63,20 +64,42 @@ public class Road : MonoBehaviour
     #region
     private void OnTriggerEnter(Collider other)
     {
-        if (checkLinkedMask.Contain(other.gameObject.layer) && !roadLinks.Contains(uncertainRoad))
+        if (checkLinkedMask.Contain(other.gameObject.layer))
         {
-            roadLinks.Add(uncertainRoad);
-            uncertainRoad.roadLinks.Add(this);
+            if (isUncertainXZ)
+                AddRoad();
+            else if (isUncertainY)
+                RemoveRoad();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (checkLinkedMask.Contain(other.gameObject.layer) && roadLinks.Contains(uncertainRoad))
+        if (checkLinkedMask.Contain(other.gameObject.layer))
         {
-            roadLinks.Remove(uncertainRoad);
-            uncertainRoad.roadLinks.Remove(this);
+            if (isUncertainXZ)
+                RemoveRoad();
+            else if (isUncertainY)
+                AddRoad();
         }
+    }
+
+    private void AddRoad()
+    {
+        if (roadLinks.Contains(uncertainRoad))
+            return;
+
+        roadLinks.Add(uncertainRoad);
+        uncertainRoad.roadLinks.Add(this);
+    }
+
+    private void RemoveRoad()
+    {
+        if (!roadLinks.Contains(uncertainRoad))
+            return;
+
+        roadLinks.Remove(uncertainRoad);
+        uncertainRoad.roadLinks.Remove(this);
     }
     #endregion
 }

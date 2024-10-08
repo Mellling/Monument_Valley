@@ -491,7 +491,8 @@ MonoBehaviour:
     m_Bits: 0
   <roadLinks>k__BackingField:
   - {fileID: 830689196}
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -1067,7 +1068,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField:
   - {fileID: 488819718}
   - {fileID: 1656301831}
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
@@ -1196,7 +1198,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -1519,7 +1522,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField:
   - {fileID: 830689196}
   - {fileID: 394911891}
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
@@ -2225,7 +2229,8 @@ MonoBehaviour:
   <roadLinks>k__BackingField:
   - {fileID: 89343206}
   - {fileID: 488819718}
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
@@ -2332,6 +2337,7 @@ Transform:
   - {fileID: 1943776395}
   - {fileID: 1977598810}
   - {fileID: 1956623792}
+  - {fileID: 2069593854}
   m_Father: {fileID: 2052927582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910358929
@@ -2388,7 +2394,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -2517,7 +2524,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -2631,7 +2639,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -3020,7 +3029,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -3149,7 +3159,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -3278,7 +3289,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -3407,7 +3419,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -3494,6 +3507,7 @@ GameObject:
   - component: {fileID: 1378799642}
   - component: {fileID: 1378799641}
   - component: {fileID: 1378799640}
+  - component: {fileID: 1378799643}
   - component: {fileID: 1378799639}
   m_Layer: 8
   m_Name: Road 10
@@ -3534,10 +3548,11 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   <roadLinks>k__BackingField: []
-  isUncertain: 0
-  uncertainRoad: {fileID: 0}
+  isUncertainXZ: 0
+  isUncertainY: 1
+  uncertainRoad: {fileID: 433740090}
   isStair: 0
   isEndRoad: 0
 --- !u!65 &1378799640
@@ -3611,6 +3626,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378799637}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1378799643
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378799637}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1428247542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,7 +4049,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -4208,7 +4251,8 @@ MonoBehaviour:
     m_Bits: 0
   <roadLinks>k__BackingField:
   - {fileID: 394911891}
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 1
@@ -4266,7 +4310,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -4395,7 +4440,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -4632,8 +4678,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 1
-  uncertainRoad: {fileID: 2082684415}
+  isUncertainXZ: 1
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
 --- !u!65 &1751449013
@@ -4761,7 +4808,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -5643,9 +5691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a149e22051db15b449f35a4896d2730a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roads:
-  - {fileID: 2082684415}
-  - {fileID: 1751449012}
   bridge: {fileID: 1943776395}
   handleLight: {fileID: 2057069553}
   rotationSpeed: 0.1
@@ -5812,7 +5857,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
@@ -6017,6 +6063,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 256515206}
   m_LocalEulerAnglesHint: {x: 50, y: -28.13, z: 0}
+--- !u!1 &2069593853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069593854}
+  - component: {fileID: 2069593857}
+  - component: {fileID: 2069593856}
+  - component: {fileID: 2069593855}
+  m_Layer: 10
+  m_Name: CheckLinked 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069593854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069593853}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.26896092, y: 0.65395725, z: -0.65395725, w: -0.26896092}
+  m_LocalPosition: {x: 0, y: -1.0100002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 832430494}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2069593855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069593853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2069593856
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069593853}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2069593857
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069593853}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2082684414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,7 +6208,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   <roadLinks>k__BackingField: []
-  isUncertain: 1
+  isUncertainXZ: 1
+  isUncertainY: 0
   uncertainRoad: {fileID: 1751449012}
   isStair: 0
   isEndRoad: 0
@@ -6262,7 +6414,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   <roadLinks>k__BackingField: []
-  isUncertain: 0
+  isUncertainXZ: 0
+  isUncertainY: 0
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0

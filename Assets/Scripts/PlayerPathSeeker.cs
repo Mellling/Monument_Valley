@@ -60,7 +60,7 @@ public class PlayerPathSeeker : MonoBehaviour
             .OnUpdate(() => // 이동하는 동안 매 프레임 호출되는 업데이트 메서드
             {
                 // 플레이어의 조작이 길 연결에 영향을 주지 않을 때에만
-                if (!road.isUncertain)
+                if (!road.isUncertainXZ)
                 {
                     // 목표 방향으로 회전
                     RotateTowardsTarget(targetPosition);
