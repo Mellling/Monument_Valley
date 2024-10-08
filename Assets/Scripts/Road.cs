@@ -10,6 +10,8 @@ public class Road : MonoBehaviour
     [Header("Linked Roads")]
     // Ray의 레이어 마스크
     [SerializeField] LayerMask roadMask;
+    [Tooltip("Only on the Road at the end of an object that changes its location through player manipulation")]
+    [SerializeField] LayerMask checkLinkedMask;
     // 맵에서 연결된 길을 저장하는 List
     [field : SerializeField] public List<Road> roadLinks { get; private set; } = new List<Road>();
 
@@ -54,6 +56,26 @@ public class Road : MonoBehaviour
                     roadLinks.Add(road);
                 }
             }
+        }
+    }
+    #endregion
+
+    #region
+    private void OnTriggerEnter(Collider other)
+    {
+        if (checkLinkedMask.Contain(other.gameObject.layer) && !roadLinks.Contains(uncertainRoad))
+        {
+            roadLinks.Add(uncertainRoad);
+            uncertainRoad.roadLinks.Add(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (checkLinkedMask.Contain(other.gameObject.layer) && roadLinks.Contains(uncertainRoad))
+        {
+            roadLinks.Remove(uncertainRoad);
+            uncertainRoad.roadLinks.Remove(this);
         }
     }
     #endregion
