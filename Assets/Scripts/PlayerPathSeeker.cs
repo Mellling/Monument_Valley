@@ -12,21 +12,26 @@ public class PlayerPathSeeker : MonoBehaviour
     [Tooltip("Player game start point road")]
     // 플레이어가 현재 있는 길
     [SerializeField] Road currentRoad;
+    Sequence seq;
 
     #region Player move
     public void Move(Road targetRoad)
     {
+        // 시퀀스가 활성 상태라면 메서드 종료
+        if (seq != null && seq.IsActive())
+            return;
+
         // 목표 길까지의 경로를 List로 가져옴
         List<Road> path = GetOptimalRoute(targetRoad);
 
-        // 목표 길에 도달할 수 없다면 메소드 종료
+        // 목표 길에 도달할 수 없다면 메서드 종료
         if (path == null)
             return;
 
         currentRoad = targetRoad;
 
         // DOTween 시퀀스를 생성
-        Sequence seq = DOTween.Sequence();
+        seq = DOTween.Sequence();
 
         // DOTween을 이용해 이동
         foreach (var road in path)
