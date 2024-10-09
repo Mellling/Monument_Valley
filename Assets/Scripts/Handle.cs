@@ -15,10 +15,16 @@ public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     [SerializeField] RotationAxis handleRotationAxis;
     Sequence rotateSeq;
 
+    [Header("Can interaction")]
+    public bool interactable;
+
     #region Rotate
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!interactable)  // 조작이 불가능한 상태일 경우
+            return;
+
         handleLight.enabled = true;
 
         if (rotateSeq != null && rotateSeq.IsActive())
@@ -27,6 +33,9 @@ public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!interactable)  // 조작이 불가능한 상태일 경우
+            return;
+
         float rotationX = eventData.delta.x * rotationSpeed;    // X축 드래그로 인한 회전값 계산
         float rotationY = eventData.delta.y * rotationSpeed;    // y축 드래그로 인한 회전값 계산
 
@@ -42,6 +51,9 @@ public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!interactable)  // 조작이 불가능한 상태일 경우
+            return;
+
         handleLight.enabled = false;
 
         SnapToNearest90Degrees(1f);
