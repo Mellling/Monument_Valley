@@ -61,7 +61,7 @@ public class Road : MonoBehaviour
     }
     #endregion
 
-    #region
+    #region Update road linked
     private void OnTriggerEnter(Collider other)
     {
         if (checkLinkedMask.Contain(other.gameObject.layer))
