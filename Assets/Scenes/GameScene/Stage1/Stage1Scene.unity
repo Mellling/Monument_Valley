@@ -189,7 +189,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 2871
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -496,6 +496,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &89343207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1073,6 +1074,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &394911892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1156,7 +1158,7 @@ GameObject:
   - component: {fileID: 433740093}
   - component: {fileID: 433740092}
   - component: {fileID: 433740091}
-  - component: {fileID: 433740090}
+  - component: {fileID: 433740094}
   m_Layer: 8
   m_Name: Road 11
   m_TagString: Untagged
@@ -1179,30 +1181,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &433740090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433740088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 0
-  uncertainRoad: {fileID: 0}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &433740091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1274,6 +1252,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433740088}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &433740094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433740088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &478777505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1531,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &488819719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2234,6 +2239,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 1
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &830689197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2399,6 +2405,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &910358932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2529,6 +2536,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &952261417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2644,6 +2652,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1044985067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2796,6 +2805,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   pathSeeker: {fileID: 1081572832}
+  isOnBridge: 0
 --- !u!114 &1081572832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3034,6 +3044,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1238047598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3164,6 +3175,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1317531629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3294,6 +3306,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1317789426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3424,6 +3437,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1339805771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3508,7 +3522,7 @@ GameObject:
   - component: {fileID: 1378799641}
   - component: {fileID: 1378799640}
   - component: {fileID: 1378799643}
-  - component: {fileID: 1378799639}
+  - component: {fileID: 1378799644}
   m_Layer: 8
   m_Name: Road 10
   m_TagString: Untagged
@@ -3531,30 +3545,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1378799639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378799637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 1
-  uncertainRoad: {fileID: 433740090}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &1378799640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3653,6 +3643,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1378799644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378799637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 1
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &1428247542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3900,7 +3916,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4007,7 +4023,7 @@ GameObject:
   - component: {fileID: 1582476712}
   - component: {fileID: 1582476711}
   - component: {fileID: 1582476710}
-  - component: {fileID: 1582476709}
+  - component: {fileID: 1582476713}
   m_Layer: 8
   m_Name: Road 14
   m_TagString: Untagged
@@ -4030,30 +4046,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1582476709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582476707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 0
-  uncertainRoad: {fileID: 0}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &1582476710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4125,6 +4117,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582476707}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1582476713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582476707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &1656301826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,6 +4274,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 1
+  isBridgeRoad: 0
 --- !u!1 &1658480614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,7 +4287,7 @@ GameObject:
   - component: {fileID: 1658480619}
   - component: {fileID: 1658480618}
   - component: {fileID: 1658480617}
-  - component: {fileID: 1658480616}
+  - component: {fileID: 1658480620}
   m_Layer: 8
   m_Name: Road 13
   m_TagString: Untagged
@@ -4291,30 +4310,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1658480616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658480614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 0
-  uncertainRoad: {fileID: 0}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &1658480617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4386,6 +4381,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658480614}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1658480620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658480614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &1677359329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4398,7 +4419,7 @@ GameObject:
   - component: {fileID: 1677359334}
   - component: {fileID: 1677359333}
   - component: {fileID: 1677359332}
-  - component: {fileID: 1677359331}
+  - component: {fileID: 1677359335}
   m_Layer: 8
   m_Name: Road 9
   m_TagString: Untagged
@@ -4421,30 +4442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1677359331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677359329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 0
-  uncertainRoad: {fileID: 0}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &1677359332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4516,6 +4513,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677359329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1677359335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677359329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &1699717557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,6 +4706,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1751449013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4813,6 +4837,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &1786839382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5192,6 +5217,7 @@ GameObject:
   - component: {fileID: 1943776397}
   - component: {fileID: 1943776396}
   - component: {fileID: 1943776399}
+  - component: {fileID: 1943776400}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -5293,6 +5319,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -9119559747779143917, guid: daa56cfb4b32b2a4ba5536f35870d78a, type: 3}
+--- !u!114 &1943776400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943776394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa53c1c8e0f32147b41bde5f44ea41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handle: {fileID: 1977598814}
+  bridgeRoads:
+  - {fileID: 2082684421}
+  - {fileID: 1677359335}
+  - {fileID: 1378799644}
+  - {fileID: 433740094}
+  - {fileID: 2096318363}
+  - {fileID: 1658480620}
+  - {fileID: 1582476713}
 --- !u!1 &1945221170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,6 +5743,7 @@ MonoBehaviour:
   rotationSpeed: 0.1
   brigdeRotationAxis: 0
   handleRotationAxis: 1
+  interactable: 1
 --- !u!1 &1986798327
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,6 +5910,7 @@ MonoBehaviour:
   uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
+  isBridgeRoad: 0
 --- !u!65 &2032937321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6181,7 +6230,7 @@ GameObject:
   - component: {fileID: 2082684417}
   - component: {fileID: 2082684416}
   - component: {fileID: 2082684420}
-  - component: {fileID: 2082684415}
+  - component: {fileID: 2082684421}
   m_Layer: 8
   m_Name: Road 8
   m_TagString: Untagged
@@ -6189,30 +6238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2082684415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082684414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 1
-  isUncertainY: 0
-  uncertainRoad: {fileID: 1751449012}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &2082684416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6326,6 +6351,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2082684421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082684414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 1
+  isUncertainY: 0
+  uncertainRoad: {fileID: 1751449012}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!1 &2095845203
 GameObject:
   m_ObjectHideFlags: 0
@@ -6372,7 +6423,7 @@ GameObject:
   - component: {fileID: 2096318362}
   - component: {fileID: 2096318361}
   - component: {fileID: 2096318360}
-  - component: {fileID: 2096318359}
+  - component: {fileID: 2096318363}
   m_Layer: 8
   m_Name: Road 12
   m_TagString: Untagged
@@ -6395,30 +6446,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943776395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2096318359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096318357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a0f4adcd182d8438d884308f7b649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkLinkedMask:
-    serializedVersion: 2
-    m_Bits: 0
-  <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
-  isUncertainY: 0
-  uncertainRoad: {fileID: 0}
-  isStair: 0
-  isEndRoad: 0
 --- !u!65 &2096318360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6490,6 +6517,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096318357}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2096318363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096318357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3d472ebd602e14b84cbe66866b6c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  checkLinkedMask:
+    serializedVersion: 2
+    m_Bits: 0
+  <roadLinks>k__BackingField: []
+  isUncertainXZ: 0
+  isUncertainY: 0
+  uncertainRoad: {fileID: 0}
+  isStair: 0
+  isEndRoad: 0
+  isBridgeRoad: 0
+  bridge: {fileID: 0}
 --- !u!23 &2279828082020883695
 MeshRenderer:
   m_ObjectHideFlags: 0

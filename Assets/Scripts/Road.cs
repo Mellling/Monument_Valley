@@ -26,6 +26,9 @@ public class Road : MonoBehaviour
     [Header("Last load or not")]
     public bool isEndRoad;
 
+    [Header("Bridge load or not")]
+    public bool isBridgeRoad;
+
     public Road UncertainRoad => uncertainRoad;
 
     #region Unity Event
@@ -62,7 +65,7 @@ public class Road : MonoBehaviour
     #endregion
 
     #region Update road linked
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (checkLinkedMask.Contain(other.gameObject.layer))
         {
@@ -73,7 +76,7 @@ public class Road : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (checkLinkedMask.Contain(other.gameObject.layer))
         {

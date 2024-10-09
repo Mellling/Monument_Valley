@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask roadMask;
     [SerializeField] PlayerPathSeeker pathSeeker;
 
+    [Header("Player and bridge interaction")]
+    [SerializeField] bool isOnBridge;
+    Bridge collidedBridge;
+
     private const float rayDistance = 1000f; // Raycast 최대 거리
 
     #region Move
@@ -37,6 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             // 충돌한 오브젝트가 길일 경우 이동 메소드 호출
             pathSeeker.Move(hitRoad);
+            CheckBridgeAndUpdateControl(hitRoad);
         }
     }
 
@@ -54,11 +59,32 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out var hitInfo, rayDistance, roadMask))
         {
             // 충돌한 오브젝트에서 Road 컴포넌트를 가져옵니다.
-            hitRoad = hitInfo.transform.GetComponent<Road>();
+            hitInfo.collider.TryGetComponent(out hitRoad);
+
             // Road가 null이 아닐 경우 true 반환
             return hitRoad != null;
         }
+
         return false; // 길에 충돌하지 않음
+    }
+
+    /// <summary>
+    /// 플레이어와 다리의 상호작용 상태에 따라 조작 가능 여부를 업데이트하는 메서드
+    /// </summary>
+    /// <param name="clickRoad">플레이어가 클릭한 Road</param>
+    private void CheckBridgeAndUpdateControl(Road clickRoad)
+    {
+        if (clickRoad.isBridgeRoad && !isOnBridge)
+        {
+            collidedBridge = (clickRoad as BridgeRoad).bridge;
+            collidedBridge.ControlInteractable(isOnBridge);
+            isOnBridge = true;
+        }
+        else if (isOnBridge && !clickRoad.isBridgeRoad)
+        {
+            collidedBridge.ControlInteractable(isOnBridge);
+            isOnBridge = false;
+        }
     }
     #endregion
 }
