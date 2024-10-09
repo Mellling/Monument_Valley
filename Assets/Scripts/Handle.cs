@@ -60,13 +60,21 @@ public class Handle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         Vector3 currentRotation = rotateObject.rotation.eulerAngles;  // 현재 오브젝트의 회전값을 오일러 각도로 가져옴
 
         Quaternion rotationAround;
+
         // X축을 기준으로 회전 계산 (X축과 Y축 드래그 합산)
         if (rotationAxis.Equals(RotationAxis.right))
+        {
             rotationAround = Quaternion.AngleAxis(rotationX + rotationY, Vector3.right);
+            // X축 회전 각도를 360도 범위 내로 유지
+            currentRotation.x = currentRotation.x % 360f;
+        }
+        // Y축을 기준으로 회전 계산
         else
+        {
             rotationAround = Quaternion.AngleAxis(rotationX + rotationY, Vector3.up);
-        // X축 회전 각도를 360도 범위 내로 유지
-        currentRotation.x = currentRotation.x % 360f;
+            // Y축 회전 각도를 360도 범위 내로 유지
+            currentRotation.y = currentRotation.y % 360f;
+        }
 
         // 현재 bridge의 회전에 계산한 회전값을 누적
         rotateObject.rotation = rotateObject.rotation * rotationAround;
