@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Block player control")]
     [SerializeField] Image block;
+    private bool isGameEnd;
+
     [Header("Camera Move")]
     [SerializeField] float cameraMoveDis = 10f;
     public Vector3 cameraTargetPos;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Go To Lobby")]
     [SerializeField] Button lobbyButton;
+    public bool IsGameEnd => isGameEnd;
 
     #region Unity Event
     private void Awake()
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         // 게임 조작 막기
         block.gameObject.SetActive(true);
+        isGameEnd = true;
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.up * cameraMoveDis;
         cameraIsMoving = true;  // 카메라 이동 여부 체크하는 bool 변수 true로
