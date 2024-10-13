@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,9 +11,10 @@ public class LobbyManager : MonoBehaviour
     public static LobbyManager Instance => instance;
 
     [Header("Camera Move")]
-    [SerializeField] float cameraMoveDis = 21f;
+    [SerializeField] float cameraMoveWaitSec;
+    [SerializeField] float cameraMoveDis = 19f;
     public Vector3 cameraTargetPos;
-    private bool cameraIsMoving = true;
+    private bool cameraIsMoving;
 
     #region Unity Event
     private void Awake()
@@ -22,8 +24,11 @@ public class LobbyManager : MonoBehaviour
         else
             Destroy(instance);
 
+        cameraIsMoving = false;
+
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.down * cameraMoveDis;
+        StartCoroutine(WaitCameraMove()); // 기다렸다가 카메라 움직이도록
     }
 
     private void Update()
@@ -40,13 +45,24 @@ public class LobbyManager : MonoBehaviour
     {
         // 카메라 cameraTargetPos로 천천히 이동
         Camera.main.transform.position = Vector3.MoveTowards
-            (Camera.main.transform.position, cameraTargetPos, 3f * Time.deltaTime);
+            (Camera.main.transform.position, cameraTargetPos, 4f * Time.deltaTime);
 
         // 목표 위치 도달 확인
         if (Vector3.Distance(Camera.main.transform.position, cameraTargetPos) < 0.01f)
         {
             cameraIsMoving = false; // 카메라 움직이는 여부 false로 전환
         }
+    }
+
+    /// <summary>
+    /// 3초 후 카메라 무빙 여부 true로 바꾸는 코루틴
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator WaitCameraMove()
+    {
+        yield return new WaitForSeconds(cameraMoveWaitSec);
+
+        cameraIsMoving = true; // 카메라 움직이는 여부 true로 전환
     }
 
     /// <summary>
