@@ -70,6 +70,11 @@ public class PlayerPathSeeker : MonoBehaviour
                     // 목표 방향으로 회전
                     RotateTowardsTarget(targetPosition);
                 }
+            })
+            .OnComplete(() =>   // 이동이 끝났을 때 호출되는 메서드
+            {
+                if (road.isEndRoad) // 만약 종료 지점이라면
+                    GameManager.Instance.TheStageEnd(); // GameManager의 종료 관련 메서드 호출
             });
     }
 
