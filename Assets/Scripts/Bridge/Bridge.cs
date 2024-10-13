@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 다리 오브젝트의 상호작용 가능 여부 업데이트
+/// 다리에 연결된 핸들의 상호작용 가능 여부 업데이트
 /// </summary>
 public class Bridge : MonoBehaviour
 {
