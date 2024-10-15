@@ -346,7 +346,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 1
   isBridgeRoad: 0
@@ -540,7 +539,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -711,7 +709,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -799,7 +796,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -970,7 +966,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1058,7 +1053,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1104,7 +1098,7 @@ GameObject:
   - component: {fileID: 246146032}
   - component: {fileID: 246146031}
   - component: {fileID: 246146030}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26829cd375f5b748a0dca20f3067301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRoad: {fileID: 0}
+  currentRoad: {fileID: 262982235}
 --- !u!136 &246146033
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1408,7 +1402,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1441,6 +1434,159 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262982232}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &263529626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263529627}
+  - component: {fileID: 263529632}
+  - component: {fileID: 263529631}
+  - component: {fileID: 263529630}
+  - component: {fileID: 263529629}
+  - component: {fileID: 263529628}
+  m_Layer: 0
+  m_Name: Switch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &263529627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1713002396}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263529628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d0dcd9a4c861749a78decd90f65487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 263529631}
+  pressureSwitch_Off: {fileID: 2100000, guid: 16f6ade8116e32946bf8459fe321a69e, type: 2}
+  collider: {fileID: 263529629}
+  moveDis: 0.05
+  canPressMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!65 &263529629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75, y: 0.7500002, z: 0.25000006}
+  m_Center: {x: 0, y: 0.00000047683716, z: 0}
+--- !u!54 &263529630
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!23 &263529631
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 24861e1319eebaa4a990a7fc57a63dc1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &263529632
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263529626}
+  m_Mesh: {fileID: -6286343496516813016, guid: 2a3fc4fc61c70404c90a03626d23b848, type: 3}
 --- !u!1 &264451220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1704,82 @@ Transform:
   - {fileID: 1298073355}
   m_Father: {fileID: 1694892475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &277963786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277963787}
+  - component: {fileID: 277963790}
+  - component: {fileID: 277963788}
+  - component: {fileID: 277963791}
+  m_Layer: 10
+  m_Name: CheckLinked 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277963787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277963786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -3.0570006, y: 1.5039998, z: -5.9587493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 336317960}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &277963788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277963786}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &277963790
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277963786}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &277963791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277963786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1b7b33684dd214282e463a1dd83dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <linkedRoad>k__BackingField: {fileID: 701962038}
 --- !u!1 &283263232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1910,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1776,7 +1997,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 1
   isBridgeRoad: 0
@@ -1819,7 +2039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 320842340}
   - component: {fileID: 320842344}
-  - component: {fileID: 320842343}
+  - component: {fileID: 320842345}
   - component: {fileID: 320842342}
   - component: {fileID: 320842341}
   m_Layer: 8
@@ -1863,9 +2083,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
+  isUncertainXZ: 1
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1891,48 +2110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &320842343
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320842339}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &320842344
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1941,6 +2118,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320842339}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &320842345
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320842339}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &325586968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2216,8 @@ Transform:
   - {fileID: 422345523}
   - {fileID: 751067747}
   - {fileID: 105504951}
+  - {fileID: 432171399}
+  - {fileID: 277963787}
   m_Father: {fileID: 1392823260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383877018
@@ -2370,6 +2576,158 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408958330}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &409512657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409512658}
+  - component: {fileID: 409512661}
+  - component: {fileID: 409512660}
+  - component: {fileID: 409512659}
+  m_Layer: 10
+  m_Name: CheckLinked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409512658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409512657}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -5.0200005, y: 5.0299997, z: -2.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1694892475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409512659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409512657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1b7b33684dd214282e463a1dd83dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <linkedRoad>k__BackingField: {fileID: 1606918097}
+--- !u!65 &409512660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409512657}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &409512661
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409512657}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &421315533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421315534}
+  - component: {fileID: 421315537}
+  - component: {fileID: 421315536}
+  - component: {fileID: 421315535}
+  m_Layer: 10
+  m_Name: CheckLinked 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421315534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421315533}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.9831991, y: 5.049, z: -5.9989996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1694892475}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421315535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421315533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1b7b33684dd214282e463a1dd83dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <linkedRoad>k__BackingField: {fileID: 223634405}
+--- !u!65 &421315536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421315533}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &421315537
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421315533}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &422345522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2778,7 @@ MonoBehaviour:
   bridge: {fileID: 1561250113}
   handleLight: {fileID: 497261494}
   rotationSpeed: 0.1
-  brigdeRotationAxis: 0
+  brigdeRotationAxis: 1
   handleRotationAxis: 1
   interactable: 1
 --- !u!64 &422345525
@@ -2495,6 +2853,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422345522}
   m_Mesh: {fileID: -573480967055983474, guid: 559946ec87f63d54d9082bc4ef585217, type: 3}
+--- !u!1 &432171398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432171399}
+  - component: {fileID: 432171403}
+  - component: {fileID: 432171401}
+  - component: {fileID: 432171400}
+  m_Layer: 10
+  m_Name: CheckLinked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432171399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432171398}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.059998512, y: 1.52, z: -3.0289965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 336317960}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432171400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432171398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1b7b33684dd214282e463a1dd83dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <linkedRoad>k__BackingField: {fileID: 517144580}
+--- !u!65 &432171401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432171398}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &432171403
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432171398}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &458455446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,10 +3067,10 @@ MonoBehaviour:
   checkLinkedMask:
     serializedVersion: 2
     m_Bits: 0
-  <roadLinks>k__BackingField: []
+  <roadLinks>k__BackingField:
+  - {fileID: 1622257655}
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2900,7 +3334,7 @@ GameObject:
   - component: {fileID: 513154091}
   - component: {fileID: 513154090}
   - component: {fileID: 513154089}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Ida_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3482,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3174,7 +3607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540000353}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3630,7 +4063,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9725491, g: 0.91372555, b: 0.62352943, a: 1}
+  m_BackGroundColor: {r: 0.972549, g: 0.91372555, b: 0.62352943, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3849,7 +4282,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4063,7 +4495,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4421,7 +4852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 771533533}
   - component: {fileID: 771533537}
-  - component: {fileID: 771533536}
   - component: {fileID: 771533535}
   - component: {fileID: 771533534}
   m_Layer: 8
@@ -4463,11 +4893,10 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4493,48 +4922,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &771533536
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771533532}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &771533537
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4905,7 +5292,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5026,7 +5412,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5183,7 +5568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981328267}
   - component: {fileID: 981328271}
-  - component: {fileID: 981328270}
+  - component: {fileID: 981328272}
   - component: {fileID: 981328269}
   - component: {fileID: 981328268}
   m_Layer: 8
@@ -5227,9 +5612,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   <roadLinks>k__BackingField: []
-  isUncertainXZ: 0
+  isUncertainXZ: 1
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5255,48 +5639,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &981328270
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981328266}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &981328271
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5305,6 +5647,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981328266}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &981328272
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981328266}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1002159125
 GameObject:
   m_ObjectHideFlags: 0
@@ -5528,7 +5897,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -6029,7 +6397,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -6425,6 +6792,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164443298}
   m_Mesh: {fileID: 4529320595357891389, guid: 98868a0e3122305469b1da22693db480, type: 3}
+--- !u!1001 &1166360172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1713002396}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_Name
+      value: Zen_PressureSwitchSocket_Plain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+--- !u!4 &1166360173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cdcd251db7ae4d429b25bcbfe83cd0d, type: 3}
+  m_PrefabInstance: {fileID: 1166360172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1171765131
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,7 +6989,7 @@ GameObject:
   - component: {fileID: 1174930389}
   - component: {fileID: 1174930391}
   - component: {fileID: 1174930390}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Ida_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6873,7 +7306,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -6958,7 +7390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1210968538}
   - component: {fileID: 1210968542}
-  - component: {fileID: 1210968541}
   - component: {fileID: 1210968540}
   - component: {fileID: 1210968539}
   m_Layer: 8
@@ -7000,11 +7431,10 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7030,48 +7460,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1210968541
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210968537}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1210968542
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7468,7 +7856,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7599,7 +7986,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -8052,7 +8438,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1374765853}
   - component: {fileID: 1374765857}
-  - component: {fileID: 1374765856}
   - component: {fileID: 1374765855}
   - component: {fileID: 1374765854}
   m_Layer: 8
@@ -8094,11 +8479,10 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -8124,48 +8508,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1374765856
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374765852}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1374765857
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8533,6 +8875,7 @@ Transform:
   - {fileID: 1514810724}
   - {fileID: 74895791}
   - {fileID: 759799342}
+  - {fileID: 1713002396}
   m_Father: {fileID: 1392823260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514810720
@@ -8778,7 +9121,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9251,7 +9593,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9339,7 +9680,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9425,10 +9765,10 @@ MonoBehaviour:
   checkLinkedMask:
     serializedVersion: 2
     m_Bits: 0
-  <roadLinks>k__BackingField: []
+  <roadLinks>k__BackingField:
+  - {fileID: 459640951}
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9641,7 +9981,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9729,7 +10068,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -9800,6 +10138,8 @@ Transform:
   - {fileID: 707193662}
   - {fileID: 1002159126}
   - {fileID: 1152431144}
+  - {fileID: 409512658}
+  - {fileID: 421315534}
   m_Father: {fileID: 1392823260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705105723
@@ -9943,6 +10283,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1470678148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1713002395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713002396}
+  m_Layer: 0
+  m_Name: Switch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713002396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713002395}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -11.479, y: -1.771, z: -7.925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 263529627}
+  - {fileID: 1166360173}
+  m_Father: {fileID: 1470678148}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1772451623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10270,7 +10643,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -10381,7 +10753,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1881318105}
   - component: {fileID: 1881318109}
-  - component: {fileID: 1881318108}
   - component: {fileID: 1881318107}
   - component: {fileID: 1881318106}
   m_Layer: 8
@@ -10423,11 +10794,10 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -10453,48 +10823,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1881318108
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881318104}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1881318109
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10559,7 +10887,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -10727,7 +11054,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2027451901}
   - component: {fileID: 2027451905}
-  - component: {fileID: 2027451904}
   - component: {fileID: 2027451903}
   - component: {fileID: 2027451902}
   m_Layer: 8
@@ -10769,11 +11095,10 @@ MonoBehaviour:
     m_Bits: 256
   checkLinkedMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -10799,48 +11124,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2027451904
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027451900}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2027451905
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10937,7 +11220,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  uncertainRoad: {fileID: 0}
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0

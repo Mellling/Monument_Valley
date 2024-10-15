@@ -18,7 +18,6 @@ public class Road : MonoBehaviour
     [Header("Uncertainty Of Connection")]
     public bool isUncertainXZ;
     public bool isUncertainY;
-    [SerializeField] Road uncertainRoad;
 
     [Header("Staircase or not")]
     public bool isStair;
@@ -28,8 +27,6 @@ public class Road : MonoBehaviour
 
     [Header("Bridge load or not")]
     public bool isBridgeRoad;
-
-    public Road UncertainRoad => uncertainRoad;
 
     #region Unity Event
     private void Awake()
@@ -69,10 +66,11 @@ public class Road : MonoBehaviour
     {
         if (checkLinkedMask.Contain(other.gameObject.layer))
         {
+            other.TryGetComponent(out LinkedRoad linked);
             if (isUncertainXZ)
-                AddRoad();
+                AddRoad(linked.linkedRoad);
             else if (isUncertainY)
-                RemoveRoad();
+                RemoveRoad(linked.linkedRoad);
         }
     }
 
@@ -80,14 +78,15 @@ public class Road : MonoBehaviour
     {
         if (checkLinkedMask.Contain(other.gameObject.layer))
         {
+            other.TryGetComponent(out LinkedRoad linked);
             if (isUncertainXZ)
-                RemoveRoad();
+                RemoveRoad(linked.linkedRoad);
             else if (isUncertainY)
-                AddRoad();
+                AddRoad(linked.linkedRoad);
         }
     }
 
-    private void AddRoad()
+    private void AddRoad(Road uncertainRoad)
     {
         if (roadLinks.Contains(uncertainRoad))
             return;
@@ -96,7 +95,7 @@ public class Road : MonoBehaviour
         uncertainRoad.roadLinks.Add(this);
     }
 
-    private void RemoveRoad()
+    private void RemoveRoad(Road uncertainRoad)
     {
         if (!roadLinks.Contains(uncertainRoad))
             return;
