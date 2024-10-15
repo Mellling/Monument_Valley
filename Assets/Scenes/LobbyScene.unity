@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd7273103249f744af37671c224ca05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chapterName: 
+  chapterName: Stage2Scene
 --- !u!58 &341784352
 CircleCollider2D:
   m_ObjectHideFlags: 0
