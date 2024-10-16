@@ -493,6 +493,7 @@ MonoBehaviour:
   - {fileID: 830689196}
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1306,6 +1307,7 @@ MonoBehaviour:
   - {fileID: 1656301831}
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1507,6 +1509,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1761,6 +1764,7 @@ MonoBehaviour:
   - {fileID: 394911891}
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2468,6 +2472,7 @@ MonoBehaviour:
   - {fileID: 488819718}
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2633,6 +2638,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2763,6 +2769,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2878,6 +2885,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3269,6 +3277,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3580,6 +3589,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3710,6 +3720,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3840,6 +3851,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4069,6 +4081,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 1
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4621,6 +4634,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4729,8 +4743,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000008, y: 0.25000015, z: 1.0000001}
-  m_Center: {x: -0.00000008940696, y: -0.12500001, z: 0.00000047683716}
+  m_Size: {x: 1.0000008, y: 1, z: 1.0000001}
+  m_Center: {x: -0.00000008940696, y: -0.5, z: 0.00000047683716}
 --- !u!114 &1656301831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4753,6 +4767,7 @@ MonoBehaviour:
   - {fileID: 394911891}
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 1
   isStair: 0
   isEndRoad: 1
   isBridgeRoad: 0
@@ -4883,6 +4898,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5014,6 +5030,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5182,6 +5199,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 1
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5312,6 +5330,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -6552,6 +6571,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7030,6 +7050,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 1
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7195,6 +7216,7 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
+  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
