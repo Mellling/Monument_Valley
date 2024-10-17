@@ -7,7 +7,7 @@ using UnityEngine.UI;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance = new GameManager();
+    private static GameManager instance;
     public static GameManager Instance => instance;
 
     [Header("Block player control")]
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(instance);
+            Destroy(gameObject);
     }
 
     private void Update()

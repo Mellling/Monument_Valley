@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class LobbyManager : MonoBehaviour
 {
-    private static LobbyManager instance = new LobbyManager();
+    private static LobbyManager instance;
     public static LobbyManager Instance => instance;
 
     [Header("Camera Move")]
@@ -22,7 +22,7 @@ public class LobbyManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(instance);
+            Destroy(gameObject);
 
         cameraIsMoving = false;
 
