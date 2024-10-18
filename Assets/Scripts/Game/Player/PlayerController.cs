@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputValue Value)
     {
         // 스테이지 종료된 경우
-        if (GameManager.Instance.IsGameEnd)
+        if (!GameManager.Instance.ControlActive)
             return;
         CameraRay();    // 마우스 클릭 시 CameraRay 호출
     }

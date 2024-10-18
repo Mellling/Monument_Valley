@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Block player control")]
     [SerializeField] Image block;
-    private bool isGameEnd;
+    private bool controlActive;
 
     [Header("Camera Move")]
     [SerializeField] float cameraMoveDis = 10f;
