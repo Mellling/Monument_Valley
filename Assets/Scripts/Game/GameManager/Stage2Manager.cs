@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,8 +66,7 @@ public class Stage2Manager : GameManager
                     needSave.switches[i].gameObject.SetActive(true);
 
                 needSave.switches[i].WhenSwitchPressed();
-            }
-                
+            }  
         }
 
         // PlayerPathSeeker¿« currentRoad º≥¡§
@@ -74,6 +74,21 @@ public class Stage2Manager : GameManager
         {
             pathSeeker.currentRoad = info.transform.GetComponent<Road>();
         }
+
+        StartCoroutine(CloseLoadingUI());
+    }
+
+    protected override IEnumerator CloseLoadingUI()
+    {
+        Debug.Log(stageData.switchActive.Count);
+        for (int i = 0; i < stageData.switchActive.Count; i++)
+        {
+            if (stageData.switchActive[i])
+            {
+                yield return new WaitUntil(() => needSave.switches[i].isFinished);
+            }
+        }
+        loadingUI.gameObject.SetActive(false);
     }
     #endregion
 }

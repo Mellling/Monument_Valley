@@ -181,6 +181,7 @@ MonoBehaviour:
   - {fileID: 147980668}
   - {fileID: 842290534}
   haveTerm: 1
+  connectedSwitch: {fileID: 1633691095}
 --- !u!1 &42259398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +1948,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isFinished: 0
 --- !u!65 &263529629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5108,6 +5110,8 @@ MonoBehaviour:
   roadMask:
     serializedVersion: 2
     m_Bits: 256
+  loadingUI: {fileID: 1641896558}
+  waitLoading: 0
   needSave:
     playerTransform: {fileID: 246146034}
     bridgeTransform: {fileID: 1561250113}
@@ -7238,6 +7242,7 @@ MonoBehaviour:
   - {fileID: 1634895288}
   - {fileID: 786177063}
   haveTerm: 0
+  connectedSwitch: {fileID: 263529628}
 --- !u!1 &1174930388
 GameObject:
   m_ObjectHideFlags: 0
@@ -8399,18 +8404,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 809432261}
-    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveStageData
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: GoToLobby
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Stage2Manager, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 4928145985934868668, guid: 079387ecdb5394549848682e3e77f306, type: 3}
       propertyPath: m_Name
       value: GameCanvas
@@ -8419,10 +8412,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 809432261}
-    - target: {fileID: 8510504694577971008, guid: 079387ecdb5394549848682e3e77f306, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToLobby
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10274,6 +10263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isFinished: 0
 --- !u!65 &1633691096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10531,6 +10521,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641833509}
   m_Mesh: {fileID: 4442303928939597039, guid: 54422b0a71e4fad41bbf440b2f515474, type: 3}
+--- !u!1 &1641896558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7907317920438406089, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+  m_PrefabInstance: {fileID: 1318627256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1676115982
 GameObject:
   m_ObjectHideFlags: 0

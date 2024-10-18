@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,6 +64,8 @@ public class Stage1Manager : GameManager
         {
             pathSeeker.currentRoad = info.transform.GetComponent<Road>();
         }
+
+        loadingUI.gameObject.SetActive(false);
     }
     #endregion
 }

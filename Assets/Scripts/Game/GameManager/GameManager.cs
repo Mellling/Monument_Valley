@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -25,10 +27,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button lobbyButton;
     [SerializeField] GameObject openUIButton;
 
-    [Header("Save Data")]
+    [Header("Data Save&Load")]
     public string stageName;
     public PlayerPathSeeker pathSeeker;
     public LayerMask roadMask;
+    public GameObject loadingUI;
+    public bool waitLoading;
 
     public bool ControlActive => controlActive;
 
@@ -46,7 +50,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         if (DataManger.Instance.needLoadData)   // 데이터 로드가 필요할 시
+        {
+            loadingUI.SetActive(true);
             LoadStageData();
+        }
     }
 
     private void Update()
@@ -115,6 +122,16 @@ public class GameManager : MonoBehaviour
     public virtual void LoadStageData()
     {
         Debug.LogWarning("스테이지 정보 로드 메서드가 구현되지 않았습니다.");
+    }
+
+    /// <summary>
+    /// 모든 로딩 처리 후 로딩 UI 비활설화 하기 위한 코루틴
+    /// </summary>
+    /// <returns></returns>
+    protected virtual IEnumerator CloseLoadingUI()
+    {
+        yield return null;
+
     }
     #endregion
 }
