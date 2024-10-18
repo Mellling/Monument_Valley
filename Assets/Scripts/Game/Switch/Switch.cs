@@ -12,8 +12,11 @@ public class Switch : MonoBehaviour
     public bool isPressed;
     [SerializeField] Vector3 targetPos;
 
-    [Header("For Switch Press")]
+    [Header("When Switch Press")]
     [SerializeField] UnityEvent onPress;
+
+    [Header("For Data Load")]
+    public bool isFinished;
 
     #region Unity Event
     private void Update()
