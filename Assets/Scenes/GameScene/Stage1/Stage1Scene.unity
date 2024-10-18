@@ -5368,6 +5368,7 @@ MonoBehaviour:
   roadMask:
     serializedVersion: 2
     m_Bits: 256
+  loadingUI: {fileID: 9152599531088950007}
   needSave:
     playerTransform: {fileID: 1081572834}
     bridgeTransform: {fileID: 1943776395}
@@ -7125,6 +7126,11 @@ PrefabInstance:
 --- !u!1 &9152599531088950006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4946531130652666026, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+  m_PrefabInstance: {fileID: 9152599531088950005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9152599531088950007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7907317920438406089, guid: 079387ecdb5394549848682e3e77f306, type: 3}
   m_PrefabInstance: {fileID: 9152599531088950005}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

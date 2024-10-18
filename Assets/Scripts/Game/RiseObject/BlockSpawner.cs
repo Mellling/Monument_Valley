@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// List에 담긴 오브젝트를 List 순서대로 부드럽게 위로 상승시키는 기능 구현한 클래스
@@ -14,6 +16,9 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] List<GameObject> needToActivate = new();
 
     public bool haveTerm;
+
+    [Header("For Data Load")]
+    [SerializeField] Switch connectedSwitch;
 
     [ContextMenu("StartRiseObjectsSequentially")]
 
@@ -30,9 +35,15 @@ public class BlockSpawner : MonoBehaviour
     /// </summary>
     IEnumerator RiseObjectsSequentially()
     {
-        foreach (GameObject obj in objectsToRise)
+        for (int i = 0; i < objectsToRise.Count; i++)
         {
-            yield return StartCoroutine(RiseObject(obj));
+            if (i == objectsToRise.Count - 1)
+                yield return StartCoroutine(RiseObject(objectsToRise[i], () =>
+                {
+                    connectedSwitch.isFinished = true;
+                }));
+            else
+                yield return StartCoroutine(RiseObject(objectsToRise[i]));
             if (haveTerm)
                 yield return new WaitForSeconds(riseDuration / 2);
         }
@@ -61,5 +72,23 @@ public class BlockSpawner : MonoBehaviour
             yield return null;  // 다음 프레임까지 대기
         }
         obj.transform.position = endPos;  // 정확한 위치에 맞춤
+    }
+
+    IEnumerator RiseObject(GameObject obj, Action callback)
+    {
+        Vector3 startPos = obj.transform.position;  // 시작 위치
+        Vector3 endPos = startPos + Vector3.up * riseDis;
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < riseDuration)
+        {
+            obj.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / riseDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;  // 다음 프레임까지 대기
+        }
+        obj.transform.position = endPos;  // 정확한 위치에 맞춤
+
+        callback?.Invoke();
     }
 }
