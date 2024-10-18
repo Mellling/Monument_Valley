@@ -44,8 +44,6 @@ public struct Stage1NeedSave
 [Serializable]
 public struct Stage2Data
 {
-    public int stageID;
-
     public Vector3 playerPos;
     public Quaternion playerRota;
     public Quaternion bridgeRota;
