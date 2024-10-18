@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,12 +9,12 @@ using UnityEngine.UI;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    protected static GameManager instance;
     public static GameManager Instance => instance;
 
     [Header("Block player control")]
     [SerializeField] Image block;
-    private bool isGameEnd;
+    private bool controlActive;
 
     [Header("Camera Move")]
     [SerializeField] float cameraMoveDis = 10f;
@@ -21,15 +23,30 @@ public class GameManager : MonoBehaviour
 
     [Header("Go To Lobby")]
     [SerializeField] Button lobbyButton;
-    public bool IsGameEnd => isGameEnd;
+    [SerializeField] GameObject openUIButton;
+
+    [Header("Save Data")]
+    public string stageName;
+    public PlayerPathSeeker pathSeeker;
+    public LayerMask roadMask;
+
+    public bool ControlActive => controlActive;
 
     #region Unity Event
-    private void Awake()
+    protected virtual void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
+
+        controlActive = true;
+    }
+
+    private void Start()
+    {
+        if (DataManger.Instance.needLoadData)   // 데이터 로드가 필요할 시
+            LoadStageData();
     }
 
     private void Update()
@@ -39,6 +56,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Stage End
     /// <summary>
     /// Stage 종료 시 호출하는 메서드
     /// </summary>
@@ -46,10 +64,14 @@ public class GameManager : MonoBehaviour
     {
         // 게임 조작 막기
         block.gameObject.SetActive(true);
-        isGameEnd = true;
+        controlActive = false;
+        openUIButton.SetActive(false);
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.up * cameraMoveDis;
         cameraIsMoving = true;  // 카메라 이동 여부 체크하는 bool 변수 true로
+
+        // 스테이지 데이터 삭제
+        File.Delete(DataManger.Instance.FilePath(stageName));
     }
 
     /// <summary>
@@ -68,6 +90,7 @@ public class GameManager : MonoBehaviour
             lobbyButton.gameObject.SetActive(true); // 로비로 이동하는 버튼 오브젝트 활성화
         }
     }
+    #endregion
 
     /// <summary>
     /// Lobby Scene으로 이동
@@ -76,4 +99,22 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LobbyScene");
     }
+
+    #region Stage Data
+    /// <summary>
+    /// 스테이지 데이터 저장 메서드
+    /// </summary>
+    public virtual void SaveStageData()
+    {
+        Debug.LogWarning("스테이지 정보 저장 메서드가 구현되지 않았습니다.");
+    }
+
+    /// <summary>
+    /// 스테이지 데이터 로드 메서드
+    /// </summary>
+    public virtual void LoadStageData()
+    {
+        Debug.LogWarning("스테이지 정보 로드 메서드가 구현되지 않았습니다.");
+    }
+    #endregion
 }

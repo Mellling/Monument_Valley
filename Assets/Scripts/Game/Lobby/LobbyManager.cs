@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,12 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] float cameraMoveDis = 19f;
     public Vector3 cameraTargetPos;
     private bool cameraIsMoving;
+
+    [Header("Block player control")]
+    public GameObject restartUI;
+    public TMP_Text stageNum;
+    public TMP_Text stageName;
+    public string clickStageName;
 
     #region Unity Event
     private void Awake()
@@ -38,6 +45,7 @@ public class LobbyManager : MonoBehaviour
     }
     #endregion
 
+    #region When Start Lobby Scene
     /// <summary>
     /// cameraTargetPos까지 카메라를 이동시키는 메서드 (Update에서 실행)
     /// </summary>
@@ -64,15 +72,28 @@ public class LobbyManager : MonoBehaviour
 
         cameraIsMoving = true; // 카메라 움직이는 여부 true로 전환
     }
+    #endregion
+
+    #region Go To Chapter
+    public void ClickedContinueButton()
+    {
+        DataManger.Instance.needLoadData = true;
+    }
+
+    public void ClickedRetryButton()
+    {
+        DataManger.Instance.needLoadData = false;
+    }
 
     /// <summary>
     /// 챕터가 구현된 Scene으로 이동하는 메서드
     /// </summary>
     /// <param name="chapterName">이동할 챕터의 scene 이름</param>
-    public void GoToChapter(string chapterName)
+    public void GoToChapter()
     {
-        if (chapterName == null)
+        if (clickStageName == null)
             return;
-        SceneManager.LoadScene(chapterName);
+        SceneManager.LoadScene($"{clickStageName}Scene");
     }
+    #endregion
 }
