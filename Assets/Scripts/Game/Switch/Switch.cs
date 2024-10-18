@@ -36,6 +36,9 @@ public class Switch : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 스위치와 플레이어 충돌 시 작업 구현한 메서드
+    /// </summary>
     public void WhenSwitchPressed()
     {
         targetPos = transform.position + Vector3.down * moveDis;

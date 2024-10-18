@@ -87,11 +87,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("LobbyScene");
     }
 
+    /// <summary>
+    /// 스테이지 데이터 저장 메서드
+    /// </summary>
     public virtual void SaveStageData()
     {
         Debug.LogWarning("스테이지 정보 저장 메서드가 구현되지 않았습니다.");
     }
 
+    /// <summary>
+    /// 스테이지 데이터 로드 메서드
+    /// </summary>
     public virtual void LoadStageData()
     {
         Debug.LogWarning("스테이지 정보 로드 메서드가 구현되지 않았습니다.");

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 스테이지 1 관리하는 Manager
+/// </summary>
 public class Stage1Manager : GameManager
 {
     public Stage1NeedSave needSave;

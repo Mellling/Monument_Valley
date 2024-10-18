@@ -2,6 +2,9 @@ using System;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// 데이터 Save/Road 관련된 것을 관리하는 Manager
+/// </summary>
 public class DataManger : MonoBehaviour
 {
     private static DataManger instance;

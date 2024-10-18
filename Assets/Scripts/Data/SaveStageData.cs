@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 스테이지 데이터 Save/Road를 위한 구조체 모음
+/// </summary>
 public class SaveStageData : MonoBehaviour { }
 
 #region Satge 1
