@@ -11,7 +11,7 @@ public class PlayerPathSeeker : MonoBehaviour
 {
     [Tooltip("Player game start point road")]
     // 플레이어가 현재 있는 길
-    [SerializeField] Road currentRoad;
+    public Road currentRoad;
     Sequence seq;
 
     #region Player move

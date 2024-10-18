@@ -1930,6 +1930,7 @@ MonoBehaviour:
   canPressMask:
     serializedVersion: 2
     m_Bits: 128
+  isPressed: 0
   targetPos: {x: 0, y: 0, z: 0}
   onPress:
     m_PersistentCalls:
@@ -5316,7 +5317,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809432259}
-  - component: {fileID: 809432258}
+  - component: {fileID: 809432261}
+  - component: {fileID: 809432260}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5324,22 +5326,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &809432258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809432257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495ab5bd292a5d143b66284a8bb29e0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  block: {fileID: 283263233}
-  cameraMoveDis: 10
-  cameraTargetPos: {x: 0, y: 0, z: 0}
-  lobbyButton: {fileID: 1264165030}
 --- !u!4 &809432259
 Transform:
   m_ObjectHideFlags: 0
@@ -5355,6 +5341,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809432260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809432257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b60b9e668ef214480adaaf322746f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &809432261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809432257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27dc1521a89f71942a162d8c31262911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 283263233}
+  cameraMoveDis: 10
+  cameraTargetPos: {x: 0, y: 0, z: 0}
+  lobbyButton: {fileID: 1264165030}
+  stageName: 0
+  pathSeeker: {fileID: 246146032}
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  needSave:
+    playerTransform: {fileID: 246146034}
+    bridgeTransform: {fileID: 1561250113}
+    handleTransform: {fileID: 422345523}
+    switches:
+    - {fileID: 263529628}
+    - {fileID: 1633691095}
+  stageData:
+    stageID: 0
+    playerPos: {x: -9.621748, y: 0.57678807, z: -5.220546}
+    playerRota: {x: 0, y: 0.9963052, z: 0, w: -0.085883334}
+    bridgeRota: {x: 0.0023338522, y: -0.707103, z: -0.0014858721, w: 0.7071052}
+    handleRota: {x: 0.6258056, y: -0.0021579375, z: 0.7799742, w: -0.0017314021}
+    switchActive: 
 --- !u!1 &842290534
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,7 +8356,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 809432258}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToLobby
         m_Mode: 1
@@ -10551,6 +10584,7 @@ MonoBehaviour:
   canPressMask:
     serializedVersion: 2
     m_Bits: 128
+  isPressed: 0
   targetPos: {x: 0, y: 0, z: 0}
   onPress:
     m_PersistentCalls:

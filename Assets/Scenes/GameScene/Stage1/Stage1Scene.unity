@@ -493,7 +493,6 @@ MonoBehaviour:
   - {fileID: 830689196}
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -770,7 +769,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1919250168}
+      - m_Target: {fileID: 1919250171}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToLobby
         m_Mode: 1
@@ -1307,7 +1306,6 @@ MonoBehaviour:
   - {fileID: 1656301831}
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1509,7 +1507,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -1764,7 +1761,6 @@ MonoBehaviour:
   - {fileID: 394911891}
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2472,7 +2468,6 @@ MonoBehaviour:
   - {fileID: 488819718}
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 1
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2638,7 +2633,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2769,7 +2763,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -2885,7 +2878,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3277,7 +3269,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3589,7 +3580,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3720,7 +3710,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -3851,7 +3840,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4081,7 +4069,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 1
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4634,7 +4621,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -4767,7 +4753,6 @@ MonoBehaviour:
   - {fileID: 394911891}
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 1
   isStair: 0
   isEndRoad: 1
   isBridgeRoad: 0
@@ -4898,7 +4883,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5030,7 +5014,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5199,7 +5182,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 1
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5330,7 +5312,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -5710,7 +5691,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1919250169}
-  - component: {fileID: 1919250168}
+  - component: {fileID: 1919250171}
+  - component: {fileID: 1919250170}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5718,22 +5700,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1919250168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919250167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495ab5bd292a5d143b66284a8bb29e0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  block: {fileID: 1272617143}
-  cameraMoveDis: 10
-  cameraTargetPos: {x: 0, y: 0, z: 0}
-  lobbyButton: {fileID: 198286818}
 --- !u!4 &1919250169
 Transform:
   m_ObjectHideFlags: 0
@@ -5749,6 +5715,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919250170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919250167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b60b9e668ef214480adaaf322746f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1919250171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919250167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e7034ceac0daa499e37414d8b29292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1272617143}
+  cameraMoveDis: 10
+  cameraTargetPos: {x: 0, y: 0, z: 0}
+  lobbyButton: {fileID: 198286818}
+  stageName: 1
+  pathSeeker: {fileID: 1081572832}
+  roadMask:
+    serializedVersion: 2
+    m_Bits: 256
+  needSave:
+    playerTransform: {fileID: 1081572834}
+    bridgeTransform: {fileID: 1943776395}
+    handleTransform: {fileID: 1977598810}
+  stageData:
+    playerPos: {x: 0, y: 0, z: 0}
+    playerRota: {x: 0, y: 0, z: 0, w: 0}
+    bridgeRota: {x: 0, y: 0, z: 0, w: 0}
+    handleRota: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1943776394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6571,7 +6579,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7050,7 +7057,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 1
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0
@@ -7216,7 +7222,6 @@ MonoBehaviour:
   <roadLinks>k__BackingField: []
   isUncertainXZ: 0
   isUncertainY: 0
-  isFlat: 0
   isStair: 0
   isEndRoad: 0
   isBridgeRoad: 0

@@ -9,7 +9,7 @@ public class Switch : MonoBehaviour
     [SerializeField] Collider collider;
     [SerializeField] float moveDis;
     [SerializeField] LayerMask canPressMask;
-    bool isPressed;
+    public bool isPressed;
     [SerializeField] Vector3 targetPos;
 
     [Header("For Switch Press")]
@@ -24,7 +24,7 @@ public class Switch : MonoBehaviour
     #endregion
 
     #region Is Pressed
-    public void SwitchPressed()
+    private void SwitchPressed()
     {
         transform.position = Vector3.MoveTowards
             (transform.position, targetPos, 2f * Time.deltaTime);
@@ -36,13 +36,18 @@ public class Switch : MonoBehaviour
         }
     }
 
+    public void WhenSwitchPressed()
+    {
+        targetPos = transform.position + Vector3.down * moveDis;
+        isPressed = true;
+        renderer.material = pressureSwitch_Off;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!isPressed && canPressMask.Contain(collision.gameObject.layer))
         {
-            targetPos = transform.position + Vector3.down * moveDis;
-            isPressed = true;
-            renderer.material = pressureSwitch_Off;
+            WhenSwitchPressed();
         }
     }
     #endregion

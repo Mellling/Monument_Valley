@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    protected static GameManager instance;
     public static GameManager Instance => instance;
 
     [Header("Block player control")]
@@ -21,10 +23,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Go To Lobby")]
     [SerializeField] Button lobbyButton;
+
+    [Header("Save Data")]
+    public string stageName;
+    public PlayerPathSeeker pathSeeker;
+    public LayerMask roadMask;
+
     public bool IsGameEnd => isGameEnd;
 
     #region Unity Event
-    private void Awake()
+    protected virtual void Awake()
     {
         if (instance == null)
             instance = this;
@@ -74,6 +82,24 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GoToLobby()
     {
+        // 스테이지 데이터 삭제
+        File.Delete(DataManger.Instance.FilePath(stageName));
         SceneManager.LoadScene("LobbyScene");
     }
+
+    public virtual void SaveStageData()
+    {
+        Debug.LogWarning("스테이지 정보 저장 메서드가 구현되지 않았습니다.");
+    }
+
+    public virtual void LoadStageData()
+    {
+        Debug.LogWarning("스테이지 정보 로드 메서드가 구현되지 않았습니다.");
+    }
+}
+
+public enum Stage
+{
+    stage1 = 1, 
+    stage2 = 2
 }
