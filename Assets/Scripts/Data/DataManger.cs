@@ -13,14 +13,22 @@ public class DataManger : MonoBehaviour
 #if UNITY_EDITOR
     private string path = Path.Combine(Application.dataPath, $"Resources/Data/SaveStageData");
 #endif
+    // 스테이지 데이터 로드 필요 여부
+    public bool needLoadData;
 
+
+    #region unity Event
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else
             Destroy(gameObject);
     }
+    #endregion
 
     public void SaveData<T>(T stageData, string fileName) where T : struct
     {
