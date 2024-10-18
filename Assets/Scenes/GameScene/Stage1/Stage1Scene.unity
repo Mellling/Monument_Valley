@@ -5362,6 +5362,7 @@ MonoBehaviour:
   cameraMoveDis: 10
   cameraTargetPos: {x: 0, y: 0, z: 0}
   lobbyButton: {fileID: 1152809272}
+  openUIButton: {fileID: 9152599531088950006}
   stageName: 
   pathSeeker: {fileID: 1081572832}
   roadMask:
@@ -7121,6 +7122,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+--- !u!1 &9152599531088950006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4946531130652666026, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+  m_PrefabInstance: {fileID: 9152599531088950005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

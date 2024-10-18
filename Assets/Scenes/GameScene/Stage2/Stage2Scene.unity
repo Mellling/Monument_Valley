@@ -5102,7 +5102,8 @@ MonoBehaviour:
   cameraMoveDis: 10
   cameraTargetPos: {x: 0, y: 0, z: 0}
   lobbyButton: {fileID: 1318627257}
-  stageName: 0
+  openUIButton: {fileID: 1318627259}
+  stageName: 
   pathSeeker: {fileID: 246146032}
   roadMask:
     serializedVersion: 2
@@ -5115,7 +5116,6 @@ MonoBehaviour:
     - {fileID: 263529628}
     - {fileID: 1633691095}
   stageData:
-    stageID: 0
     playerPos: {x: -9.621748, y: 0.57678807, z: -5.220546}
     playerRota: {x: 0, y: 0.9963052, z: 0, w: -0.085883334}
     bridgeRota: {x: 0.0023338522, y: -0.707103, z: -0.0014858721, w: 0.7071052}
@@ -8450,6 +8450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1318627259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4946531130652666026, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+  m_PrefabInstance: {fileID: 1318627256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1327110352
 GameObject:
   m_ObjectHideFlags: 0

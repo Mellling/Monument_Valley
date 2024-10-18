@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Go To Lobby")]
     [SerializeField] Button lobbyButton;
+    [SerializeField] GameObject openUIButton;
 
     [Header("Save Data")]
     public string stageName;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         // 게임 조작 막기
         block.gameObject.SetActive(true);
         controlActive = false;
+        openUIButton.SetActive(false);
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.up * cameraMoveDis;
         cameraIsMoving = true;  // 카메라 이동 여부 체크하는 bool 변수 true로
