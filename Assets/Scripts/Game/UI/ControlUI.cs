@@ -19,4 +19,10 @@ public class ControlUI : MonoBehaviour
             ui.SetActive(!ui.activeSelf);
         }
     }
+
+    public void ControlPlayerActive(bool active)
+    {
+        GameManager.Instance.controlActive = active;
+    }
+
 }
