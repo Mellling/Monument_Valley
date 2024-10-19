@@ -11,7 +11,9 @@ public class DataManger : MonoBehaviour
     public static DataManger Instance => instance;
 
 #if UNITY_EDITOR
-    private string path = Path.Combine(Application.dataPath, $"Resources/Data/SaveStageData");
+    private string path = Path.Combine(Application.dataPath, "Resources", "Data", "SaveStageData");
+#else
+    private string path = Path.Combine(Application.persistentDataPath, "Data", "SaveLoad");
 #endif
     // 스테이지 데이터 로드 필요 여부
     public bool needLoadData;
@@ -27,6 +29,11 @@ public class DataManger : MonoBehaviour
         }
         else
             Destroy(gameObject);
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
     }
     #endregion
 

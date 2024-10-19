@@ -24,7 +24,10 @@ public class ChapterButton : MonoBehaviour
             LobbyManager.Instance.restartUI.SetActive(true);
         }
         else
+        {
+            DataManger.Instance.needLoadData = false;
             GoToChapter();
+        }
     }
 
     private void GoToChapter()
