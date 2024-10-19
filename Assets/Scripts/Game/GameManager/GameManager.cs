@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Block player control")]
     [SerializeField] Image block;
-    private bool controlActive;
+    public bool controlActive;
 
     [Header("Camera Move")]
     [SerializeField] float cameraMoveDis = 10f;
@@ -32,9 +32,6 @@ public class GameManager : MonoBehaviour
     public PlayerPathSeeker pathSeeker;
     public LayerMask roadMask;
     public GameObject loadingUI;
-    public bool waitLoading;
-
-    public bool ControlActive => controlActive;
 
     #region Unity Event
     protected virtual void Awake()
