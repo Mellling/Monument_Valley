@@ -64,6 +64,9 @@ public class UIManager : MonoBehaviour
     /// <param name="canvasGroup">Fade In 시킬 canvasGroup</param>
     public void FadeIn(CanvasGroup canvasGroup)
     {
+        if (canvasGroup.alpha != 0f)
+            canvasGroup.alpha = 0f;
+
         canvasGroup.DOFade(1f, 0.5f);  // (목표 alpha 값, 애니메이션 시간)
     }
 
