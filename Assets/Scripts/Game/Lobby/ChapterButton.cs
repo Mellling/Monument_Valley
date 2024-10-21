@@ -10,6 +10,9 @@ public class ChapterButton : MonoBehaviour
     [SerializeField] string stageNum;
     [SerializeField] string stageName;
 
+    [Header("For smooth moving")]
+    [SerializeField] CanvasGroup restarGroup;
+
     [Header("Sound")]
     [SerializeField] AudioClip ClickChapterButton;
 

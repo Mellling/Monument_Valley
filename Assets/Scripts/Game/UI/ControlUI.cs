@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,16 +13,43 @@ public class ControlUI : MonoBehaviour
     [Header("Sound")]
     [SerializeField] AudioClip UIClickSFX;
 
+    [Header("UI motion")]
+    [SerializeField] CanvasGroup fadeGroup;
+
     private void Start()
     {
         if (UIManager.Instance.UIHistoryStack.Count == 0)
+        {
+            button.onClick.AddListener(() =>
+            {
+                if (GameManager.Instance != null)
+                    GameManager.Instance.controlActive = false;
+            });
             UIManager.Instance.UIOpen(gameObject);
+        }
+        else if (UIManager.Instance.UIHistoryStack.Count == 1)
+        {
+            button.onClick.AddListener(() =>
+            {
+                if (GameManager.Instance != null)
+                    GameManager.Instance.controlActive = true;
+            });
+        }
 
         button.onClick.AddListener(() =>
         {
-            UIManager.Instance.UIClose();
+            if (fadeGroup == null)  // Fade 작용이 필요 없을 경우
+                UIManager.Instance.UIClose();
+            else
+                UIManager.Instance.UIClose(fadeGroup);
+
             UIManager.Instance.UIOpen(connectedUI);
             SoundManager.Instance.PlaySFX(UIClickSFX);
         });
+    }
+
+    private void OnEnable()
+    {
+        UIManager.Instance.FadeIn(fadeGroup);   // 활성화될 때 UIManager의 FadeIn 메서드 호출
     }
 }

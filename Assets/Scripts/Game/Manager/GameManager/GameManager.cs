@@ -28,14 +28,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button lobbyButton;
     [SerializeField] GameObject openUIButton;
 
+    [Header("UI")]
+    [SerializeField] protected GameObject StroyUI;
+    public string stageNum;
+    public string stageName;
+    public string stageStroy;
+
     [Header("Sound")]
     [SerializeField] protected AudioClip InGameBGM;
 
     [Header("Data Save&Load")]
-    public string stageName;
+    public string chapterName;
     public PlayerPathSeeker pathSeeker;
     public LayerMask roadMask;
-    public GameObject loadingUI;
+    public CanvasGroup loadingUI;
 
     #region Unity Event
     protected virtual void Awake()
@@ -50,22 +56,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.BGMVolme = SoundManager.Instance.saveBGMVolme;    // 챕터 씬 오기 전 조작해둔 BGM 볼륨 할당
+
         if (DataManger.Instance.needLoadData)   // 데이터 로드가 필요할 시
         {
-            loadingUI.SetActive(true);
+            loadingUI.gameObject.SetActive(true);
             LoadStageData();
         }
         else
         {
             SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
-            StartCoroutine(WaitGameStart());
-            // gameStart = true;
+            if (StroyUI != null)
+                StroyUI.SetActive(true);
+            else
+                StartCoroutine(WaitGameStart());
         }
     }
 
     IEnumerator WaitGameStart()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         gameStart = true;
     }
 
@@ -91,7 +101,7 @@ public class GameManager : MonoBehaviour
         cameraIsMoving = true;  // 카메라 이동 여부 체크하는 bool 변수 true로
 
         // 스테이지 데이터 삭제
-        File.Delete(DataManger.Instance.FilePath(stageName));
+        File.Delete(DataManger.Instance.FilePath(chapterName));
     }
 
     /// <summary>

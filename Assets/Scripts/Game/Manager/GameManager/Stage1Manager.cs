@@ -15,7 +15,7 @@ public class Stage1Manager : GameManager
     protected override void Awake()
     {
         base.Awake();
-        stageName = "Stage1";
+        chapterName = "Stage1";
     }
     #endregion
 
@@ -35,7 +35,7 @@ public class Stage1Manager : GameManager
 
         stageData.SetData(needSave.playerTransform.position, playerRotation, bridgeRotation, handleRotation);
 
-        DataManger.Instance.SaveData(stageData, stageName);
+        DataManger.Instance.SaveData(stageData, chapterName);
     }
 
     [ContextMenu("Load")]
@@ -47,7 +47,7 @@ public class Stage1Manager : GameManager
             return;
         }
 
-        DataManger.Instance.LoadData(ref stageData, stageName);
+        DataManger.Instance.LoadData(ref stageData, chapterName);
 
         // 플레이어
         needSave.playerTransform.position = stageData.playerPos;
@@ -65,10 +65,17 @@ public class Stage1Manager : GameManager
             pathSeeker.currentRoad = info.transform.GetComponent<Road>();
         }
 
-        loadingUI.gameObject.SetActive(false);
+        UIManager.Instance.StartFadeOutAndDisable(loadingUI, loadingUI.gameObject);
+
+        StartCoroutine(WaitForGameStart());
+        SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
+    }
+
+    IEnumerator WaitForGameStart()
+    {
+        yield return new WaitForSeconds(1f);
 
         gameStart = true;
-        SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
     }
     #endregion
 }

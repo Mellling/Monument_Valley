@@ -5480,8 +5480,12 @@ MonoBehaviour:
   cameraTargetPos: {x: 0, y: 0, z: 0}
   lobbyButton: {fileID: 1152809272}
   openUIButton: {fileID: 9152599531088950006}
-  InGameBGM: {fileID: 8300000, guid: 2dcf91b74a9631f468e5fa9fff5a7481, type: 3}
+  StroyUI: {fileID: 0}
+  stageNum: 
   stageName: 
+  stageStroy: 
+  InGameBGM: {fileID: 8300000, guid: 2dcf91b74a9631f468e5fa9fff5a7481, type: 3}
+  chapterName: 
   pathSeeker: {fileID: 1081572832}
   roadMask:
     serializedVersion: 2
@@ -7160,6 +7164,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1919250171}
+    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1919250171}
+    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526976309116924669, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4928145985934868668, guid: 079387ecdb5394549848682e3e77f306, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -7169,7 +7193,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1919250171}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6092245135413975879, guid: 079387ecdb5394549848682e3e77f306, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079387ecdb5394549848682e3e77f306, type: 3}
@@ -7178,9 +7203,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4946531130652666026, guid: 079387ecdb5394549848682e3e77f306, type: 3}
   m_PrefabInstance: {fileID: 9152599531088950005}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9152599531088950007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7907317920438406089, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+--- !u!225 &9152599531088950007 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4245461583434709879, guid: 079387ecdb5394549848682e3e77f306, type: 3}
   m_PrefabInstance: {fileID: 9152599531088950005}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
