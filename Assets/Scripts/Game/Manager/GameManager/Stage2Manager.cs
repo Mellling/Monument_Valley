@@ -12,7 +12,7 @@ public class Stage2Manager : GameManager
     protected override void Awake()
     {
         base.Awake();
-        stageName = "Stage2";
+        chapterName = "Stage2";
     }
     #endregion
 
@@ -33,7 +33,7 @@ public class Stage2Manager : GameManager
         stageData.SetData(needSave.playerTransform.position, playerRotation, bridgeRotation, handleRotation,
             needSave.switches[0].isPressed, needSave.switches[1].isPressed);
 
-        DataManger.Instance.SaveData(stageData, stageName);
+        DataManger.Instance.SaveData(stageData, chapterName);
     }
 
     [ContextMenu("Load")]
@@ -45,7 +45,7 @@ public class Stage2Manager : GameManager
             return;
         }
 
-        DataManger.Instance.LoadData(ref stageData, stageName);
+        DataManger.Instance.LoadData(ref stageData, chapterName);
 
         // 플레이어
         needSave.playerTransform.position = stageData.playerPos;
@@ -88,8 +88,9 @@ public class Stage2Manager : GameManager
                 yield return new WaitUntil(() => needSave.switches[i].isFinished);
             }
         }
-        loadingUI.gameObject.SetActive(false);
-        gameStart = true;
+
+        UIManager.Instance.StartFadeOutAndDisable(loadingUI, loadingUI.gameObject);
+        StroyUI.SetActive(true);
         SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
     }
     #endregion

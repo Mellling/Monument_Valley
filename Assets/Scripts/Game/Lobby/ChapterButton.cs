@@ -30,7 +30,6 @@ public class ChapterButton : MonoBehaviour
             LobbyManager.Instance.stageNum.text = stageNum;
             LobbyManager.Instance.stageName.text = stageName;
             LobbyManager.Instance.restartUI.SetActive(true);
-            UIManager.Instance.FadeIn(restarGroup);
         }
         else
         {

@@ -19,7 +19,22 @@ public class ControlUI : MonoBehaviour
     private void Start()
     {
         if (UIManager.Instance.UIHistoryStack.Count == 0)
+        {
+            button.onClick.AddListener(() =>
+            {
+                if (GameManager.Instance != null)
+                    GameManager.Instance.controlActive = false;
+            });
             UIManager.Instance.UIOpen(gameObject);
+        }
+        else if (UIManager.Instance.UIHistoryStack.Count == 1)
+        {
+            button.onClick.AddListener(() =>
+            {
+                if (GameManager.Instance != null)
+                    GameManager.Instance.controlActive = true;
+            });
+        }
 
         button.onClick.AddListener(() =>
         {
