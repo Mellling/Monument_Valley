@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
     public void GoToLobby()
     {
         SoundManager.Instance.StopBGM();    // BGM 종료
+        UIManager.Instance.UIHistoryStack.Clear();  // UI Stack 초기화
         SceneManager.LoadScene("LobbyScene");
     }
 

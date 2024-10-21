@@ -4922,13 +4922,13 @@ MonoBehaviour:
   openUIButton: {fileID: 1318627259}
   InGameBGM: {fileID: 8300000, guid: 5b03fb8d5bad7f842ab857bbd8f1d78e, type: 3}
   stageName: 
-  pathSeeker: {fileID: 0}
+  pathSeeker: {fileID: 2039952179}
   roadMask:
     serializedVersion: 2
     m_Bits: 256
   loadingUI: {fileID: 1641896558}
   needSave:
-    playerTransform: {fileID: 0}
+    playerTransform: {fileID: 2039952178}
     bridgeTransform: {fileID: 1561250113}
     handleTransform: {fileID: 422345523}
     switches:
@@ -8205,6 +8205,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376549097272627839, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 809432261}
+    - target: {fileID: 3376549097272627839, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 809432261}
+    - target: {fileID: 3376549097272627839, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveStageData
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376549097272627839, guid: 079387ecdb5394549848682e3e77f306, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GoToLobby
+      objectReference: {fileID: 0}
     - target: {fileID: 3977654076799851079, guid: 079387ecdb5394549848682e3e77f306, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12296,6 +12312,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb7cac7765985a44bc39cc6d3618439, type: 3}
+--- !u!4 &2039952178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2642962691573626928, guid: 6eb7cac7765985a44bc39cc6d3618439, type: 3}
+  m_PrefabInstance: {fileID: 2039952177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039952179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8803693132233293199, guid: 6eb7cac7765985a44bc39cc6d3618439, type: 3}
+  m_PrefabInstance: {fileID: 2039952177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26829cd375f5b748a0dca20f3067301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068655469
 GameObject:
   m_ObjectHideFlags: 0

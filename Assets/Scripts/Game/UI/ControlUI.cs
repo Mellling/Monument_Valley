@@ -8,20 +8,20 @@ public class ControlUI : MonoBehaviour
 {
     [SerializeField] GameObject connectedUI;
     [SerializeField] Button button;
-    [SerializeField] bool isOpenButton;
+
+    [Header("Sound")]
+    [SerializeField] AudioClip UIClickSFX;
 
     private void Start()
     {
-        if (isOpenButton)
-        {
-            if (UIManager.Instance.UIHistoryStack.Count == 0)
-                UIManager.Instance.UIOpen(gameObject);
-        }
+        if (UIManager.Instance.UIHistoryStack.Count == 0)
+            UIManager.Instance.UIOpen(gameObject);
 
         button.onClick.AddListener(() =>
         {
             UIManager.Instance.UIClose();
             UIManager.Instance.UIOpen(connectedUI);
+            SoundManager.Instance.PlaySFX(UIClickSFX);
         });
     }
 }
