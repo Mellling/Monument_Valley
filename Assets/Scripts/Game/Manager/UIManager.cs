@@ -29,16 +29,13 @@ public class UIManager : MonoBehaviour
     {
         UIHistoryStack.Push(ui);
         ui.SetActive(true);
-        Debug.Log($"Open / {ui.name}");
     }
 
     public void UIClose()
     {
         if (UIHistoryStack.Count == 0)
             return;
-        GameObject obj = UIHistoryStack.Pop();
-        obj.SetActive(false);
-        Debug.Log($"Close / {obj.name}");
-        // UIHistoryStack.Pop().SetActive(true);
+
+        UIHistoryStack.Pop().SetActive(false);
     }
 }
