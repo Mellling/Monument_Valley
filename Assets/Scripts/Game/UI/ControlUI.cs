@@ -24,21 +24,4 @@ public class ControlUI : MonoBehaviour
             UIManager.Instance.UIOpen(connectedUI);
         });
     }
-
-    /// <summary>
-    /// UI 켜거나 끄는 메서드
-    /// </summary>
-    public void ControlConnectedUI()
-    {
-        /*foreach (GameObject ui in connectedUI)
-        {
-            ui.SetActive(!ui.activeSelf);
-        }*/
-    }
-
-    public void ControlPlayerActive(bool active)
-    {
-        GameManager.Instance.controlActive = active;
-    }
-
 }
