@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 9033026471974419716}
   - component: {fileID: 39963890678703877}
   - component: {fileID: 4668549170261607868}
+  - component: {fileID: 5616200655176829131}
   m_Layer: 5
   m_Name: AskGoToLobby
   m_TagString: Untagged
@@ -621,6 +622,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5616200655176829131
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576604670992239866}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1889466780477060186
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +904,7 @@ MonoBehaviour:
   connectedUI: {fileID: 4946531130652666026}
   button: {fileID: 6767792608823924212}
   UIClickSFX: {fileID: 8300000, guid: d524149b779a772498a261f88803ed97, type: 3}
+  fadeGroup: {fileID: 1940049247275369409}
 --- !u!1 &2274655701819473820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1097,7 @@ GameObject:
   - component: {fileID: 6551520935228581882}
   - component: {fileID: 2172070296531011165}
   - component: {fileID: 3776280080916779449}
+  - component: {fileID: 8184477523419013572}
   m_Layer: 5
   m_Name: OptionUI
   m_TagString: Untagged
@@ -1153,6 +1168,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8184477523419013572
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246590044146805294}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3443879639209692187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,6 +1631,7 @@ GameObject:
   - component: {fileID: 4310593318583199433}
   - component: {fileID: 5368268286216242130}
   - component: {fileID: 5476304900061752658}
+  - component: {fileID: 1243536018907316598}
   m_Layer: 5
   m_Name: OpenUIButton
   m_TagString: Untagged
@@ -1727,6 +1755,19 @@ MonoBehaviour:
   connectedUI: {fileID: 900494062786270298}
   button: {fileID: 5368268286216242130}
   UIClickSFX: {fileID: 8300000, guid: 0e292ca067edf584ea37e8d78e3a1672, type: 3}
+  fadeGroup: {fileID: 1243536018907316598}
+--- !u!225 &1243536018907316598
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946531130652666026}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4950313865384926628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,6 +2162,7 @@ MonoBehaviour:
   connectedUI: {fileID: 900494062786270298}
   button: {fileID: 926792346770480594}
   UIClickSFX: {fileID: 8300000, guid: d524149b779a772498a261f88803ed97, type: 3}
+  fadeGroup: {fileID: 5616200655176829131}
 --- !u!1 &6064807799023864187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2812,7 @@ MonoBehaviour:
   connectedUI: {fileID: 900494062786270298}
   button: {fileID: 6803156744472122615}
   UIClickSFX: {fileID: 8300000, guid: d524149b779a772498a261f88803ed97, type: 3}
+  fadeGroup: {fileID: 8184477523419013572}
 --- !u!1 &7142051111894477758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +3024,7 @@ MonoBehaviour:
   connectedUI: {fileID: 1576604670992239866}
   button: {fileID: 4526976309116924669}
   UIClickSFX: {fileID: 8300000, guid: 0e292ca067edf584ea37e8d78e3a1672, type: 3}
+  fadeGroup: {fileID: 1940049247275369409}
 --- !u!1 &7547723772407931472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,6 +3482,7 @@ MonoBehaviour:
   connectedUI: {fileID: 3246590044146805294}
   button: {fileID: 4657365632805324315}
   UIClickSFX: {fileID: 8300000, guid: 0e292ca067edf584ea37e8d78e3a1672, type: 3}
+  fadeGroup: {fileID: 1940049247275369409}
 --- !u!1 &8155264378640227793
 GameObject:
   m_ObjectHideFlags: 0
