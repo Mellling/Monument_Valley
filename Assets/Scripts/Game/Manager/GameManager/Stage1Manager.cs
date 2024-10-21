@@ -66,6 +66,9 @@ public class Stage1Manager : GameManager
         }
 
         loadingUI.gameObject.SetActive(false);
+
+        gameStart = true;
+        SoundManager.Instance.PlayBGM(InGameBGM);  // BGM «√∑π¿Ã
     }
     #endregion
 }

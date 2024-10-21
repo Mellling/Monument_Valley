@@ -14,9 +14,10 @@ public class GameManager : MonoBehaviour
     protected static GameManager instance;
     public static GameManager Instance => instance;
 
-    [Header("Block player control")]
+    [Header("Player control")]
     [SerializeField] Image block;
     public bool controlActive;
+    public bool gameStart;
 
     [Header("Camera Move")]
     [SerializeField] float cameraMoveDis = 10f;
@@ -26,6 +27,9 @@ public class GameManager : MonoBehaviour
     [Header("Go To Lobby")]
     [SerializeField] Button lobbyButton;
     [SerializeField] GameObject openUIButton;
+
+    [Header("Sound")]
+    [SerializeField] protected AudioClip InGameBGM;
 
     [Header("Data Save&Load")]
     public string stageName;
@@ -51,6 +55,18 @@ public class GameManager : MonoBehaviour
             loadingUI.SetActive(true);
             LoadStageData();
         }
+        else
+        {
+            SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
+            StartCoroutine(WaitGameStart());
+            // gameStart = true;
+        }
+    }
+
+    IEnumerator WaitGameStart()
+    {
+        yield return new WaitForSeconds(1f);
+        gameStart = true;
     }
 
     private void Update()
@@ -101,6 +117,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GoToLobby()
     {
+        SoundManager.Instance.StopBGM();    // BGM 종료
         SceneManager.LoadScene("LobbyScene");
     }
 
