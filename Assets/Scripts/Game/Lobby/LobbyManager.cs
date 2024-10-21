@@ -100,6 +100,7 @@ public class LobbyManager : MonoBehaviour
         if (clickStageName == null)
             return;
         SoundManager.Instance.StopBGM();    // BGM 정지
+        UIManager.Instance.UIHistoryStack.Clear();  // UI Stack 초기화
         SceneManager.LoadScene($"{clickStageName}Scene");
     }
     #endregion
