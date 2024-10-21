@@ -23,9 +23,11 @@ public class LobbyManager : MonoBehaviour
     public TMP_Text stageName;
     public string clickStageName;
 
+    [Header("UI")]
+    [SerializeField] GameObject gameMenuUI;
+
     [Header("Sound")]
     [SerializeField] AudioClip InLobbyBGM;
-    // [SerializeField] AudioClip ClickChapter;
 
     #region Unity Event
     private void Awake()
@@ -65,6 +67,7 @@ public class LobbyManager : MonoBehaviour
         if (Vector3.Distance(Camera.main.transform.position, cameraTargetPos) < 0.01f)
         {
             cameraIsMoving = false; // 카메라 움직이는 여부 false로 전환
+            gameMenuUI.SetActive(true);    // gameMenuUI 오브젝트 활성화
         }
     }
 

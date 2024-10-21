@@ -1142,6 +1142,7 @@ MonoBehaviour:
   chapterName: Stage2
   stageNum: "\uC81C2\uC7A5"
   stageName: "\uC815\uC6D0"
+  restarGroup: {fileID: 742741678}
   ClickChapterButton: {fileID: 8300000, guid: 63961494a06eaf24aa33c17846b28fb4, type: 3}
 --- !u!23 &341784353
 MeshRenderer:
@@ -1414,6 +1415,7 @@ MonoBehaviour:
   chapterName: Stage1
   stageNum: "\uC81C1\uC7A5"
   stageName: "\uC11C\uC7A5"
+  restarGroup: {fileID: 742741678}
   ClickChapterButton: {fileID: 8300000, guid: 63961494a06eaf24aa33c17846b28fb4, type: 3}
 --- !u!23 &378948883
 MeshRenderer:
@@ -1934,6 +1936,7 @@ MonoBehaviour:
   chapterName: 
   stageNum: 
   stageName: 
+  restarGroup: {fileID: 742741678}
   ClickChapterButton: {fileID: 8300000, guid: 63961494a06eaf24aa33c17846b28fb4, type: 3}
 --- !u!23 &612956534
 MeshRenderer:
@@ -2268,6 +2271,7 @@ GameObject:
   - component: {fileID: 742741675}
   - component: {fileID: 742741677}
   - component: {fileID: 742741676}
+  - component: {fileID: 742741678}
   m_Layer: 5
   m_Name: RestartUI
   m_TagString: Untagged
@@ -2337,6 +2341,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742741674}
   m_CullTransparentMesh: 1
+--- !u!225 &742741678
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742741674}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &756686770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1263543417
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3802,6 +3818,7 @@ MonoBehaviour:
   stageNum: {fileID: 1535859371}
   stageName: {fileID: 842104000}
   clickStageName: 
+  gameMenuUI: {fileID: 1263543416}
   InLobbyBGM: {fileID: 8300000, guid: 8da2ad61792ef0b4180c792131fc3e0e, type: 3}
 --- !u!4 &1270181583
 Transform:
@@ -4647,6 +4664,7 @@ MonoBehaviour:
   chapterName: 
   stageNum: 
   stageName: 
+  restarGroup: {fileID: 742741678}
   ClickChapterButton: {fileID: 8300000, guid: 63961494a06eaf24aa33c17846b28fb4, type: 3}
 --- !u!23 &1653909341
 MeshRenderer:
@@ -4994,9 +5012,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 742741675}
   - {fileID: 1263543417}
   - {fileID: 1967520442}
+  - {fileID: 742741675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
