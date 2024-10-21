@@ -23,6 +23,10 @@ public class LobbyManager : MonoBehaviour
     public TMP_Text stageName;
     public string clickStageName;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip InLobbyBGM;
+    // [SerializeField] AudioClip ClickChapter;
+
     #region Unity Event
     private void Awake()
     {
@@ -36,6 +40,8 @@ public class LobbyManager : MonoBehaviour
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.down * cameraMoveDis;
         StartCoroutine(WaitCameraMove()); // 기다렸다가 카메라 움직이도록
+
+        SoundManager.Instance.PlayBGM(InLobbyBGM);  // BGM 플레이
     }
 
     private void Update()
@@ -93,6 +99,7 @@ public class LobbyManager : MonoBehaviour
     {
         if (clickStageName == null)
             return;
+        SoundManager.Instance.StopBGM();    // BGM 정지
         SceneManager.LoadScene($"{clickStageName}Scene");
     }
     #endregion
