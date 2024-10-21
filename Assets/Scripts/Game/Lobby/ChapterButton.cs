@@ -10,10 +10,15 @@ public class ChapterButton : MonoBehaviour
     [SerializeField] string stageNum;
     [SerializeField] string stageName;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip ClickChapterButton;
+
     private void OnMouseDown()
     {
         if (chapterName == null)
             return;
+
+        SoundManager.Instance.PlaySFX(ClickChapterButton);
 
         LobbyManager.Instance.clickStageName = chapterName;
 

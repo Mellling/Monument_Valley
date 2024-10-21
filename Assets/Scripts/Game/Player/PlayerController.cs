@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private const float rayDistance = 1000f; // Raycast 최대 거리
 
+    [Header("Sound")]
+    [SerializeField] AudioClip ClickRoadSFX;
+
     #region Move
     /// <summary>
     /// 플레이어가 마우스 클릭 시 호출되는 캐릭터 이동 메소드
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
         // Raycast로 길에 충돌하는지 확인
         if (TryGetRoadHit(ray, out Road hitRoad))
         {
+            SoundManager.Instance.StopSFX();    // 재생되고 있다는 sfxSource 종료
+            SoundManager.Instance.PlaySFX(ClickRoadSFX);    // Road 클릭 사운드 실행
             // 충돌한 오브젝트가 길일 경우 이동 메소드 호출
             pathSeeker.Move(hitRoad);
             CheckBridgeAndUpdateControl(hitRoad);
