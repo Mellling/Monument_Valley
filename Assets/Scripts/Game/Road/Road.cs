@@ -28,6 +28,9 @@ public class Road : MonoBehaviour
     [Header("Bridge load or not")]
     public bool isBridgeRoad;
 
+    [Header("Lader load or not")]
+    public bool isLaderRoad;
+
     #region Unity Event
     private void Awake()
     {
