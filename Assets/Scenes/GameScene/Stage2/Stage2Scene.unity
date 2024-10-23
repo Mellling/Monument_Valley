@@ -186,6 +186,9 @@ MonoBehaviour:
   - {fileID: 842290534}
   haveTerm: 1
   connectedSwitch: {fileID: 1633691095}
+  riseSFX:
+  - {fileID: 8300000, guid: badcc9ebd0879ed4a872e38b93c705cd, type: 3}
+  - {fileID: 8300000, guid: badcc9ebd0879ed4a872e38b93c705cd, type: 3}
 --- !u!1 &42259398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,6 +7133,13 @@ MonoBehaviour:
   - {fileID: 786177063}
   haveTerm: 0
   connectedSwitch: {fileID: 263529628}
+  riseSFX:
+  - {fileID: 8300000, guid: a089c7f4d11cf164da50b247fea6acdb, type: 3}
+  - {fileID: 8300000, guid: c2f406760c4fcb747b6aafa84f78be73, type: 3}
+  - {fileID: 8300000, guid: 9b7ec6021d27e034c9ed0e9735d88311, type: 3}
+  - {fileID: 8300000, guid: 9783288ab46b62b45b3cff665f1bc524, type: 3}
+  - {fileID: 8300000, guid: 9b7ec6021d27e034c9ed0e9735d88311, type: 3}
+  - {fileID: 8300000, guid: c2f406760c4fcb747b6aafa84f78be73, type: 3}
 --- !u!1 &1182022033
 GameObject:
   m_ObjectHideFlags: 0

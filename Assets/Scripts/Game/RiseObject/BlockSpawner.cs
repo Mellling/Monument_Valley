@@ -20,6 +20,9 @@ public class BlockSpawner : MonoBehaviour
     [Header("For Data Load")]
     [SerializeField] Switch connectedSwitch;
 
+    [Header("Sound")]
+    [SerializeField] List<AudioClip> riseSFX;
+
     [ContextMenu("StartRiseObjectsSequentially")]
 
     /// <summary>
@@ -37,6 +40,7 @@ public class BlockSpawner : MonoBehaviour
     {
         for (int i = 0; i < objectsToRise.Count; i++)
         {
+            SoundManager.Instance.PlaySFX(riseSFX[i]);  // 오브젝트 상승 사운드 실행
             if (i == objectsToRise.Count - 1)
                 yield return StartCoroutine(RiseObject(objectsToRise[i], () =>
                 {
