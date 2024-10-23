@@ -185,6 +185,7 @@ MonoBehaviour:
   - {fileID: 147980668}
   - {fileID: 842290534}
   haveTerm: 1
+  needBlockControl: 1
   connectedSwitch: {fileID: 1633691095}
   riseSFX:
   - {fileID: 8300000, guid: badcc9ebd0879ed4a872e38b93c705cd, type: 3}
@@ -7152,6 +7153,7 @@ MonoBehaviour:
   - {fileID: 1634895288}
   - {fileID: 786177063}
   haveTerm: 0
+  needBlockControl: 0
   connectedSwitch: {fileID: 263529628}
   riseSFX:
   - {fileID: 8300000, guid: a089c7f4d11cf164da50b247fea6acdb, type: 3}
