@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => instance;
 
     [Header("Player control")]
-    [SerializeField] Image block;
+    public Image block;
     public bool controlActive;
     public bool gameStart;
 
@@ -127,7 +127,33 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GoToLobby()
     {
-        SoundManager.Instance.StopBGM();    // BGM 종료
+        StartCoroutine(GoToLobbyRoutine());
+        /*SoundManager.Instance.StopBGM();    // BGM 종료
+        UIManager.Instance.UIHistoryStack.Clear();  // UI Stack 초기화
+        SceneManager.LoadScene("LobbyScene");*/
+    }
+
+    IEnumerator GoToLobbyRoutine()
+    {
+        float startBGMVolme = SoundManager.Instance.BGMVolme;
+        SoundManager.Instance.saveBGMVolme = startBGMVolme;
+        float duration = 1.0f;       // 애니메이션 시간 (초)
+        float elapsedTime = 0f;      // 경과 시간
+
+        while (elapsedTime < duration)
+        {
+            // 경과 시간에 비례하여 0에서 1 사이 값을 반환
+            float volme = Mathf.Lerp(startBGMVolme, 0f, elapsedTime / duration);
+
+            SoundManager.Instance.BGMVolme = volme;
+
+            // 경과 시간 업데이트
+            elapsedTime += Time.deltaTime;
+
+            yield return null;  // 한 프레임 대기
+        }
+
+        SoundManager.Instance.StopBGM();    // BGM 정지
         UIManager.Instance.UIHistoryStack.Clear();  // UI Stack 초기화
         SceneManager.LoadScene("LobbyScene");
     }
