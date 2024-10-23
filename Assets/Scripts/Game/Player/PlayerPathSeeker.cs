@@ -42,6 +42,8 @@ public class PlayerPathSeeker : MonoBehaviour
             // 각 위치로 이동 애니메이션을 추가
             if (road.isStair)
                 seq.Append(MoveToRoad(road, targetPosition, 0.6f, 0f));
+            else if (road.isLaderRoad)
+                seq.Append(MoveToRoad(road, (road as LaderRoad).LookObjPos));
             else
                 seq.Append(MoveToRoad(road, targetPosition));
         }
@@ -63,10 +65,10 @@ public class PlayerPathSeeker : MonoBehaviour
             .OnUpdate(() => // 이동하는 동안 매 프레임 호출되는 업데이트 메서드
             {
                 // 플레이어의 조작이 길 연결에 영향을 주지 않을 때에만
-                if (!road.isUncertainXZ)
+                if (!road.isUncertainXZ && !road.isUncertainY)
                 {
-                    // 목표 방향으로 회전
-                    RotateTowardsTarget(targetPosition);
+                     // 목표 방향으로 회전
+                     RotateTowardsTarget(targetPosition);
                 }
             })
             .OnComplete(() =>   // 이동이 끝났을 때 호출되는 메서드
@@ -90,7 +92,6 @@ public class PlayerPathSeeker : MonoBehaviour
         // 방향 벡터가 0이 아닌 경우에만 회전 로직 실행
         if (directionOnXZ != Vector3.zero)
         {
-
             // 현재 방향과 목표 방향 간의 각도 계산
             float angle = Vector3.Angle(transform.forward, directionOnXZ);
 
