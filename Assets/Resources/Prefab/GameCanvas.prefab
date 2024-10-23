@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1804938747455723654}
   - component: {fileID: 6208535422408896746}
   - component: {fileID: 8510504694577971008}
+  - component: {fileID: 2707499994467993375}
   m_Layer: 5
   m_Name: LobbyButton
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2707499994467993375}
+        m_TargetAssemblyTypeName: EndGameLobbyButton, Assembly-CSharp
+        m_MethodName: UIClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToLobby
@@ -133,6 +146,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2707499994467993375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782546455939879937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc61c876cd66074aa0897569b4b41f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIClickSFX: {fileID: 8300000, guid: 0e292ca067edf584ea37e8d78e3a1672, type: 3}
 --- !u!1 &900494062786270298
 GameObject:
   m_ObjectHideFlags: 0
