@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 /// <summary>
 /// 플레이어 조작 관련 기능 구현 클래스
@@ -17,6 +18,9 @@ public class PlayerController : MonoBehaviour
     Bridge collidedBridge;
 
     private const float rayDistance = 1000f; // Raycast 최대 거리
+
+    [Header("Click Effect")]
+    [SerializeField] ObjectPool clickEffect;
 
     [Header("Sound")]
     [SerializeField] AudioClip ClickRoadSFX;
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour
         // Raycast로 길에 충돌하는지 확인
         if (TryGetRoadHit(ray, out Road hitRoad))
         {
+            // Road 클릭 시 클릭 이팩트 오브젝트 풀링으로 활성화
+            clickEffect.GetPool(hitRoad.gameObject.transform.position, Quaternion.identity);
+
             SoundManager.Instance.StopSFX();    // 재생되고 있다는 sfxSource 종료
             SoundManager.Instance.PlaySFX(ClickRoadSFX);    // Road 클릭 사운드 실행
             // 충돌한 오브젝트가 길일 경우 이동 메소드 호출
