@@ -6139,6 +6139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5174233385131413815, guid: a82b2df225555df40b57063145dcf633, type: 3}
+      propertyPath: saveBGMVolme
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5229208562928443846, guid: a82b2df225555df40b57063145dcf633, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12999964
