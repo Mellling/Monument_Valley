@@ -43,6 +43,7 @@ public class LobbyManager : MonoBehaviour
         cameraTargetPos = Camera.main.transform.position + Vector3.down * cameraMoveDis;
         StartCoroutine(WaitCameraMove()); // 기다렸다가 카메라 움직이도록
 
+        SoundManager.Instance.BGMVolme = SoundManager.Instance.saveBGMVolme;    // 로비 씬 오기 전 조작해둔 BGM 볼륨 할당
         SoundManager.Instance.PlayBGM(InLobbyBGM);  // BGM 플레이
     }
 
