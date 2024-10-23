@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 2203884140742027986}
   sfxSource: {fileID: 3816998265602030642}
+  saveBGMVolme: 1
 --- !u!82 &2203884140742027986
 AudioSource:
   m_ObjectHideFlags: 0
