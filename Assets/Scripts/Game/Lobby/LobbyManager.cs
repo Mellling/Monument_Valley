@@ -37,14 +37,13 @@ public class LobbyManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        StartCoroutine(WaitForSoundManager());
+
         cameraIsMoving = false;
 
         // 카메라의 이동 cameraTargetPos 설정
         cameraTargetPos = Camera.main.transform.position + Vector3.down * cameraMoveDis;
         StartCoroutine(WaitCameraMove()); // 기다렸다가 카메라 움직이도록
-
-        SoundManager.Instance.BGMVolme = SoundManager.Instance.saveBGMVolme;    // 로비 씬 오기 전 조작해둔 BGM 볼륨 할당
-        SoundManager.Instance.PlayBGM(InLobbyBGM);  // BGM 플레이
     }
 
     private void Update()
@@ -55,6 +54,18 @@ public class LobbyManager : MonoBehaviour
     #endregion
 
     #region When Start Lobby Scene
+    /// <summary>
+    /// SoundManager Instance가 할당 된 후 관련 작업을 실행하는 코루틴
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator WaitForSoundManager()
+    {
+        yield return new WaitUntil(() => SoundManager.Instance != null);
+
+        SoundManager.Instance.BGMVolme = SoundManager.Instance.saveBGMVolme;    // 로비 씬 오기 전 조작해둔 BGM 볼륨 할당
+        SoundManager.Instance.PlayBGM(InLobbyBGM);  // BGM 플레이
+    }
+
     /// <summary>
     /// cameraTargetPos까지 카메라를 이동시키는 메서드 (Update에서 실행)
     /// </summary>
