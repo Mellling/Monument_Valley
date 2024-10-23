@@ -16,6 +16,7 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] List<GameObject> needToActivate = new();
 
     public bool haveTerm;
+    public bool needBlockControl;
 
     [Header("For Data Load")]
     [SerializeField] Switch connectedSwitch;
@@ -30,6 +31,8 @@ public class BlockSpawner : MonoBehaviour
     /// </summary>
     public void StartRiseObjectsSequentially()
     {
+        if (needBlockControl)   // 플레이어의 오브젝트 조작을 막아야 할 경우
+            GameManager.Instance.block.gameObject.SetActive(true);
         StartCoroutine(RiseObjectsSequentially());
     }
 
@@ -45,6 +48,8 @@ public class BlockSpawner : MonoBehaviour
                 yield return StartCoroutine(RiseObject(objectsToRise[i], () =>
                 {
                     connectedSwitch.isFinished = true;
+                    if (needBlockControl)
+                        GameManager.Instance.block.gameObject.SetActive(false);
                 }));
             else
                 yield return StartCoroutine(RiseObject(objectsToRise[i]));
