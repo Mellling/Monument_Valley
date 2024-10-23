@@ -12,11 +12,11 @@ TagManager:
   - Water
   - UI
   - Top
-  - IgnoreLayer
+  - Player
   - Road
   - Handle
-  - 
-  - 
+  - CheckLinked
+  - Sound
   - 
   - 
   - 

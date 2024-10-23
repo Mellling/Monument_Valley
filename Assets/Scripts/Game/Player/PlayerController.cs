@@ -2,16 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 /// <summary>
 /// 플레이어 조작 관련 기능 구현 클래스
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Header("Find Player Shortest Distance")]
     [SerializeField] LayerMask roadMask;
     [SerializeField] PlayerPathSeeker pathSeeker;
 
+    [Header("Player and bridge interaction")]
+    [SerializeField] bool isOnBridge;
+    Bridge collidedBridge;
+
     private const float rayDistance = 1000f; // Raycast 최대 거리
+
+    [Header("Click Effect")]
+    [SerializeField] ObjectPool clickEffect;
+
+    [Header("Sound")]
+    [SerializeField] AudioClip ClickRoadSFX;
 
     #region Move
     /// <summary>
@@ -20,6 +32,9 @@ public class PlayerController : MonoBehaviour
     /// <param name="Value"></param>
     private void OnMove(InputValue Value)
     {
+        // 스테이지 종료된 경우
+        if (!GameManager.Instance.controlActive)
+            return;
         CameraRay();    // 마우스 클릭 시 CameraRay 호출
     }
 
@@ -34,8 +49,14 @@ public class PlayerController : MonoBehaviour
         // Raycast로 길에 충돌하는지 확인
         if (TryGetRoadHit(ray, out Road hitRoad))
         {
+            // Road 클릭 시 클릭 이팩트 오브젝트 풀링으로 활성화
+            clickEffect.GetPool(hitRoad.gameObject.transform.position, Quaternion.identity);
+
+            SoundManager.Instance.StopSFX();    // 재생되고 있다는 sfxSource 종료
+            SoundManager.Instance.PlaySFX(ClickRoadSFX);    // Road 클릭 사운드 실행
             // 충돌한 오브젝트가 길일 경우 이동 메소드 호출
             pathSeeker.Move(hitRoad);
+            CheckBridgeAndUpdateControl(hitRoad);
         }
     }
 
@@ -53,11 +74,32 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out var hitInfo, rayDistance, roadMask))
         {
             // 충돌한 오브젝트에서 Road 컴포넌트를 가져옵니다.
-            hitRoad = hitInfo.transform.GetComponent<Road>();
+            hitInfo.collider.TryGetComponent(out hitRoad);
+
             // Road가 null이 아닐 경우 true 반환
             return hitRoad != null;
         }
+
         return false; // 길에 충돌하지 않음
+    }
+
+    /// <summary>
+    /// 플레이어와 다리의 상호작용 상태에 따라 조작 가능 여부를 업데이트하는 메서드
+    /// </summary>
+    /// <param name="clickRoad">플레이어가 클릭한 Road</param>
+    private void CheckBridgeAndUpdateControl(Road clickRoad)
+    {
+        if (clickRoad.isBridgeRoad && !isOnBridge)  // 다리 위로 올라옴
+        {
+            collidedBridge = (clickRoad as BridgeRoad).bridge;
+            collidedBridge.ControlInteractable(isOnBridge);
+            isOnBridge = true;
+        }
+        else if (isOnBridge && !clickRoad.isBridgeRoad) // 다리에서 내려옴
+        {
+            collidedBridge.ControlInteractable(isOnBridge);
+            isOnBridge = false;
+        }
     }
     #endregion
 }
