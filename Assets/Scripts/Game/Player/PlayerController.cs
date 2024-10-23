@@ -82,13 +82,13 @@ public class PlayerController : MonoBehaviour
     /// <param name="clickRoad">플레이어가 클릭한 Road</param>
     private void CheckBridgeAndUpdateControl(Road clickRoad)
     {
-        if (clickRoad.isBridgeRoad && !isOnBridge)
+        if (clickRoad.isBridgeRoad && !isOnBridge)  // 다리 위로 올라옴
         {
             collidedBridge = (clickRoad as BridgeRoad).bridge;
             collidedBridge.ControlInteractable(isOnBridge);
             isOnBridge = true;
         }
-        else if (isOnBridge && !clickRoad.isBridgeRoad)
+        else if (isOnBridge && !clickRoad.isBridgeRoad) // 다리에서 내려옴
         {
             collidedBridge.ControlInteractable(isOnBridge);
             isOnBridge = false;
