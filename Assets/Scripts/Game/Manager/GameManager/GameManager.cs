@@ -54,13 +54,14 @@ public class GameManager : MonoBehaviour
         controlActive = true;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         SoundManager.Instance.BGMVolme = SoundManager.Instance.saveBGMVolme;    // 챕터 씬 오기 전 조작해둔 BGM 볼륨 할당
 
         if (DataManger.Instance.needLoadData)   // 데이터 로드가 필요할 시
         {
             loadingUI.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);  // 기다렸다 데이터 로드
             LoadStageData();
         }
         else
