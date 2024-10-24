@@ -46,6 +46,8 @@ public class Stage2Manager : GameManager
         }
 
         DataManger.Instance.LoadData(ref stageData, chapterName);
+        float saveSFXVolme = SoundManager.Instance.SFXVolme;
+        SoundManager.Instance.SFXVolme = 0f;
 
         // 플레이어
         needSave.playerTransform.position = stageData.playerPos;
@@ -75,10 +77,10 @@ public class Stage2Manager : GameManager
             pathSeeker.currentRoad = info.transform.GetComponent<Road>();
         }
 
-        StartCoroutine(CloseLoadingUI());
+        StartCoroutine(CloseLoadingUI(saveSFXVolme));
     }
 
-    protected override IEnumerator CloseLoadingUI()
+    protected override IEnumerator CloseLoadingUI(float saveSFXVolme)
     {
         Debug.Log(stageData.switchActive.Count);
         for (int i = 0; i < stageData.switchActive.Count; i++)
@@ -92,6 +94,7 @@ public class Stage2Manager : GameManager
         UIManager.Instance.StartFadeOutAndDisable(loadingUI, loadingUI.gameObject);
         StroyUI.SetActive(true);
         SoundManager.Instance.PlayBGM(InGameBGM);  // BGM 플레이
+        SoundManager.Instance.SFXVolme = saveSFXVolme;
     }
     #endregion
 }

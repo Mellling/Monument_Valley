@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
     /// 모든 로딩 처리 후 로딩 UI 비활설화 하기 위한 코루틴
     /// </summary>
     /// <returns></returns>
-    protected virtual IEnumerator CloseLoadingUI()
+    protected virtual IEnumerator CloseLoadingUI(float saveSFXVolme)
     {
         yield return null;
 
